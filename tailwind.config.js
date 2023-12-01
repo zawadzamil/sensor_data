@@ -11,7 +11,8 @@ export default {
         natural: '#101840'
       },
       fontWeight: {
-        title: '400'
+        title: '400',
+        600: '600'
       },
       fontSize: {
         16: '16px'
