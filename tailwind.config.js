@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        title_green: '#429777',
+        title_green: '#52BD94',
         natural: '#101840'
       },
       fontWeight: {
@@ -15,7 +15,7 @@ export default {
         600: '600'
       },
       fontSize: {
-        16: '16px'
+        '16p': '16px'
       },
       lineHeight: {
         24: '24px'
@@ -23,6 +23,10 @@ export default {
       fontFamily: {
         lato: ['Google Font Name', 'lato'],
       },
+      spacing: {
+        '12p': '12px'
+      }
+
 
     },
   },
