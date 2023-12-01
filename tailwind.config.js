@@ -24,7 +24,9 @@ export default {
         lato: ['Google Font Name', 'lato'],
       },
       spacing: {
-        '12p': '12px'
+        '12px': '12px',
+        '8px': '8px',
+        '16px': '16px',
       }
 
 

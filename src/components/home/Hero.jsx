@@ -30,8 +30,8 @@ export default function Hero() {
         </div>
         {/* Button Section */}
         <div className="buttons mt-16 flex justify-center items-center gap-4">
-          <GreenButton title="View Model Tests" py="xx"></GreenButton>
-          <WhiteButton title="Explore Categories" py="xx"></WhiteButton>
+          <GreenButton title="View Model Tests" py="16px"></GreenButton>
+          <WhiteButton title="Explore Categories" py="16px"></WhiteButton>
         </div>
 
         {/* Cloud Section */}

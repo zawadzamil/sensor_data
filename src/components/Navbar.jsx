@@ -112,7 +112,7 @@ export default function Navbar() {
                       className="relative flex w-[24px] h-[24px] nav-item "
                     />
                    <a href="#" className="nav-item">
-                  <GreenButton title="Login"></GreenButton>
+                  <GreenButton title="Login" py="8px"></GreenButton>
                    </a>
 
                    <a href="#" className="nav-item">
