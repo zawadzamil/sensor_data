@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 import { Fragment } from "react";
 
-export default function Heading({ text, size,color }) {
-  const textSize = size ? size : "text-5xl";
-  const colorStyle = color?color : "text-title_green"
+export default function Heading({ text,style }) {
+  const customStyles = style ? style : "";
   return (
     <Fragment>
-      <span className={`${colorStyle} ${textSize} font-bold font-lato`}>
+      <span className={`${customStyles} font-bold font-lato`}>
         {text}
       </span>
     </Fragment>
@@ -15,6 +14,5 @@ export default function Heading({ text, size,color }) {
 
 Heading.propTypes = {
   text: PropTypes.string.isRequired,
-  size: PropTypes.string,
-  color: PropTypes.string
+  style: PropTypes.string
 };

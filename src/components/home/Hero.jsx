@@ -11,8 +11,8 @@ export default function Hero() {
         {/* Text Section */}
         <div className="w-full text-center justify-center ps-[10rem] pe-[3rem] pt-[182px] flex gap-0 relative">
           <div className="heading ps-4">
-            <Heading text="Exam Mastery Hub: " size="text-5xl"></Heading>
-            <Heading text="Master Your Exams with our Online Model Tests" color={`text-natural `} ></Heading>
+            <Heading text="Exam Mastery Hub: " style="text-5xl text-title_green"></Heading>
+            <Heading text="Master Your Exams with our Online Model Tests" style="text-5xl text-natural" ></Heading>
           </div>
           <div className="-rotate-360 w-36 h-28 relative translate-x-[-2.5rem] mt-2">
             <img src={assets.cloud} alt="" className="absolute top-0" />
