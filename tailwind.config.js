@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         title_green: '#52BD94',
-        natural: '#101840'
+        natural: '#101840',
+        lite_blue: '#474D66',
+        lite_green: '#429777'
       },
       fontWeight: {
         title: '400',
