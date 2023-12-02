@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import asset from "../../assets/asset";
 import FeatureCard from "../cards/FeatureCard";
-import Title from "../header/Title";
 import Heading from "../headings/Heading";
 
 export default function Features() {
@@ -9,7 +8,11 @@ export default function Features() {
     <Fragment>
       <section className="featured-section  w-full py-[8rem] px-[20rem]  flex flex-col justify-center text-center">
         <div className="title text-center">
-          <Title title="Features"></Title>
+          <div className="feature">
+            <span className="font-title text-[1rem] leading-24 text-natural hover:opacity-75">
+              Features
+            </span>
+          </div>
           <Heading
             text="Why give exam on "
             style={`text-[2.25rem] text-natural`}
