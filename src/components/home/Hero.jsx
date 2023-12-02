@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import assets from "../../assets/asset";
 import GreenButton from "../buttons/GreenButton";
 import WhiteButton from "../buttons/WhiteButton";
+import Heading from "../headings/Heading";
 
 export default function Hero() {
   return (
@@ -10,12 +11,8 @@ export default function Hero() {
         {/* Text Section */}
         <div className="w-full text-center justify-center ps-[10rem] pe-[3rem] pt-[182px] flex gap-0 relative">
           <div className="heading ps-4">
-            <span className="text-title_green text-5xl font-bold font-lato">
-              Exam Mastery Hub:
-            </span>
-            <span className="text-natural text-5xl font-bold font-lato ms-2">
-              Master Your Exams with our Online Model Tests
-            </span>
+            <Heading text="Exam Mastery Hub: " size="text-5xl"></Heading>
+            <Heading text="Master Your Exams with our Online Model Tests" color={`text-natural `} ></Heading>
           </div>
           <div className="-rotate-360 w-36 h-28 relative translate-x-[-2.5rem] mt-2">
             <img src={assets.cloud} alt="" className="absolute top-0" />
