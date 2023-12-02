@@ -21,7 +21,7 @@ export default {
         24: '24px'
       },
       fontFamily: {
-        lato: ['Google Font Name', 'lato'],
+        play: ["Lato", "sans-serif"],
       },
       spacing: {
         '12px': '12px',

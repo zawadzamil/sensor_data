@@ -30,13 +30,17 @@ export default function Hero() {
         </div>
         {/* Button Section */}
         <div className="buttons mt-16 flex justify-center items-center gap-4">
-          <GreenButton title="View Model Tests" py="16px"></GreenButton>
-          <WhiteButton title="Explore Categories" py="16px"></WhiteButton>
+          <GreenButton title="View Model Tests" ></GreenButton>
+          <WhiteButton title="Explore Categories" ></WhiteButton>
         </div>
 
         {/* Cloud Section */}
         <div className="cloud relative flex-item ml-auto">
-            <img src={assets.floatingCloud} alt="" className="w-[180px] h-[53px] mr-28 mt-20"/>
+          <img
+            src={assets.floatingCloud}
+            alt=""
+            className="w-[180px] h-[53px] mr-28 mt-20"
+          />
         </div>
       </div>
     </Fragment>
