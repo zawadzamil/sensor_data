@@ -6,7 +6,7 @@ import Heading from "../headings/Heading";
 export default function Features() {
   return (
     <Fragment>
-      <section className="featured-section  w-full py-[8rem] px-[20rem]  flex flex-col justify-center text-center">
+      <section className="featured-section  w-full py-[8rem] lg:px-[15rem] md:px-[10rem] xl:px-[20rem] 2xl:px-[25rem]  flex flex-col justify-center text-center">
         <div className="title text-center">
           <div className="feature">
             <span className="font-title text-[1rem] leading-24 text-natural hover:opacity-75">

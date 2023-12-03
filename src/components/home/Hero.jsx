@@ -27,8 +27,8 @@ export default function Hero() {
         </div>
         {/* Button Section */}
         <div className="buttons mt-16 flex justify-center items-center gap-4">
-          <GreenButton title="View Model Tests" ></GreenButton>
-          <WhiteButton title="Explore Categories" ></WhiteButton>
+          <GreenButton >View Model Tests</GreenButton>
+          <WhiteButton  >Explore Categories</WhiteButton>
         </div>
 
         {/* Cloud Section */}
