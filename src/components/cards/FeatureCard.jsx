@@ -5,7 +5,7 @@ import Heading from "../headings/Heading";
 export default function FeatureCard({ src, title, details }) {
   return (
     <Fragment>
-      <div className="feature-card flex relative gap-4 pb-16 w-full  ">
+      <div className="feature-card flex relative gap-4  w-full  ">
         <div className="icon">
           <img
             src={src}

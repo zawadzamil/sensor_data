@@ -5,7 +5,7 @@ export default function WhiteButton({children}) {
 
   return (
     <button
-      className={`nav-item tracking-[0.5px] leading-24 border border-title_green rounded bg-transparent px-[24px] py-8px font-600 text-16p text-title_green`}
+      className={` tracking-[0.5px] leading-24 border h-[3rem] border-title_green rounded bg-transparent px-[24px] py-8px font-600 text-16p text-title_green`}
     >
       {children}
     </button>

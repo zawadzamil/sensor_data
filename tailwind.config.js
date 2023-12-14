@@ -10,7 +10,9 @@ export default {
         title_green: '#52BD94',
         natural: '#101840',
         lite_blue: '#474D66',
-        lite_green: '#429777'
+        lite_green: '#429777',
+        bg_green: '#DCF2EA',
+        filter_green: '#317159'
       },
       fontWeight: {
         title: '400',

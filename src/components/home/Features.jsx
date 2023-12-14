@@ -24,7 +24,7 @@ export default function Features() {
           <Heading text="Test" style={`text-[2.25rem] text-natural`}></Heading>
         </div>
 
-        <div className="cards pt-[6rem] grid grid-cols-3 gap-[1.5rem] w-full">
+        <div className="cards pt-[6rem] grid grid-cols-3 gap-x-[1.5rem] gap-y-[4rem] w-full">
           <FeatureCard
             src={asset.diamond}
             title="Realistic Exam Simulations"
