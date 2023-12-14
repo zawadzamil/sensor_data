@@ -9,7 +9,7 @@ export default function Hero() {
     <Fragment>
       <div className=" hero w-full h-[720px]  flex flex-col items-center ">
         {/* Text Section */}
-        <div className="w-full text-center justify-center ps-[10rem] pe-[3rem] pt-[182px] flex gap-0 relative">
+        <div className="w-full text-center justify-center myContainer pt-[182px] flex gap-0 relative">
           <div className="heading ps-4">
             <Heading text="Exam Mastery Hub: " style="text-5xl text-title_green"></Heading>
             <Heading text="Master Your Exams with our Online Model Tests" style="text-5xl text-natural" ></Heading>

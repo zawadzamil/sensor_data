@@ -10,3 +10,25 @@
     rgba(220, 242, 234, 0) 79.38%
   );
 }
+
+/* For screen size 1980 and above */
+.myContainer {
+  padding-left: 25rem;
+  padding-right: 25rem;
+}
+
+/* For screen size 1500 to 1979 */
+@media screen and (max-width: 1979px) and (min-width: 1500px) {
+  .myContainer {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+}
+
+/* For screen size 1280 to 1499 */
+@media screen and (max-width: 1499px) and (min-width: 1280px) {
+  .myContainer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
