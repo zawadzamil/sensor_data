@@ -1,0 +1,15 @@
+<svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Cpu">
+<path id="Vector" opacity="0.2" d="M78.625 19.25H22.375C21.5462 19.25 20.7513 19.5792 20.1653 20.1653C19.5792 20.7513 19.25 21.5462 19.25 22.375V78.625C19.25 79.4538 19.5792 80.2487 20.1653 80.8347C20.7513 81.4208 21.5462 81.75 22.375 81.75H78.625C79.4538 81.75 80.2487 81.4208 80.8347 80.8347C81.4208 80.2487 81.75 79.4538 81.75 78.625V22.375C81.75 21.5462 81.4208 20.7513 80.8347 20.1653C80.2487 19.5792 79.4538 19.25 78.625 19.25ZM61.4375 61.4375H39.5625V39.5625H61.4375V61.4375Z" fill="#101840"/>
+<path id="Vector_2" d="M61.4375 39.5625H39.5625V61.4375H61.4375V39.5625Z" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M78.625 19.25H22.375C20.6491 19.25 19.25 20.6491 19.25 22.375V78.625C19.25 80.3509 20.6491 81.75 22.375 81.75H78.625C80.3509 81.75 81.75 80.3509 81.75 78.625V22.375C81.75 20.6491 80.3509 19.25 78.625 19.25Z" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M81.75 41.125H91.125" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M81.75 59.875H91.125" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M9.875 41.125H19.25" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M9.875 59.875H19.25" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M59.875 81.75V91.125" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_9" d="M41.125 81.75V91.125" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_10" d="M59.875 9.875V19.25" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_11" d="M41.125 9.875V19.25" stroke="#101840" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

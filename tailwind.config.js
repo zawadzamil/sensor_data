@@ -12,7 +12,8 @@ export default {
         lite_blue: '#474D66',
         lite_green: '#429777',
         bg_green: '#DCF2EA',
-        filter_green: '#317159'
+        filter_green: '#317159',
+        natural_bg_green: '#F4F6FA'
       },
       fontWeight: {
         title: '400',

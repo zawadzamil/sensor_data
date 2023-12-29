@@ -11,6 +11,27 @@
   );
 }
 
+.custom-shape-divider-top-1703852338 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1703852338 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 40px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1703852338 .shape-fill {
+  fill: #b42222;
+}
+
 /* For screen size 1980 and above */
 .myContainer {
   padding-left: 25rem;
