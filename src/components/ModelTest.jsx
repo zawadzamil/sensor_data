@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
+import CourseCard from "./cards/CourseCard";
 import Filter from "./texts/Filter";
 
 export default function ModelTest(props) {
@@ -13,11 +14,21 @@ export default function ModelTest(props) {
           </div>
           {props.btn}
         </div>
-
+        {/* Filter */}
         <div className="filter pt-[2.25rem]  flex gap-4">
-          <Filter className={`bg-bg_green text-filter_green`}>BCS</Filter>
-          <Filter className={` text-lite_blue`}>Bank Jobs</Filter>
-          <Filter className={` text-lite_blue`}>Admission Exam</Filter>
+          <Filter active={true}>Design & Development</Filter>
+          <Filter active={false}>SEO & Digital Marketing</Filter>
+          <Filter active={false}>Video Editing</Filter>
+          <Filter active={false}>Marketing</Filter>
+        </div>
+
+        {/* Cource Card */}
+        <div className="course-card mt-12  grid grid-cols-3 gap-6">
+          <CourseCard title='All In One - 2023 BCS Preparation Model test Bundle set.'></CourseCard>
+          <CourseCard></CourseCard>
+          <CourseCard></CourseCard>
+          <CourseCard></CourseCard>
+
         </div>
       </section>
     </Fragment>

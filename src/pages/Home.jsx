@@ -22,7 +22,7 @@ export default function Home() {
 
       <ModelTest
         top={`pt-[6rem]`}
-        subtitle={<Subtitle className=" ">Popular Tests</Subtitle>}
+        subtitle={<Subtitle >POPULAR COURSES</Subtitle>}
         title={<Title>Give exam on the Trending Model-Tests.</Title>}
 
 

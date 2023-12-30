@@ -9,11 +9,13 @@ import desktop from './icons/DesktopTower.svg';
 import diamond from './icons/DiamondsFour.png';
 import fileCode from "./icons/FileCode.svg";
 import film from './icons/FilmStrip.svg';
+import graduationCap from './icons/GraduationCap.png';
 import handFist from './icons/HandFist.png';
 import palette from './icons/Palette.svg';
 import pokerChip from './icons/PokerChip.png';
 import presentation from './icons/PresentationChart.svg';
 import userGear from './icons/UserCircleGear.png';
+import userMultiple from './icons/UserMultiple.png';
 import cloud from './images/cloud.png';
 import floatingCloud from './images/floating_cloud.png';
 
@@ -37,7 +39,9 @@ const assets = {
     desktop,
     film,
     calculator,
-    atom
+    atom,
+    graduationCap,
+    userMultiple
 }
 
 export default assets;

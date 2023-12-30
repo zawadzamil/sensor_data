@@ -4,6 +4,9 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  daisyui: {
+    darkTheme: "light",
+   },
   theme: {
     extend: {
       colors: {
@@ -13,7 +16,9 @@ export default {
         lite_green: '#429777',
         bg_green: '#DCF2EA',
         filter_green: '#317159',
-        natural_bg_green: '#F4F6FA'
+        natural_bg_green: '#F4F6FA',
+        badge_yellow: '#66460D',
+        badge_yellow_bg: '#FFEFD2'
       },
       fontWeight: {
         title: '400',
@@ -26,7 +31,7 @@ export default {
         24: '24px'
       },
       fontFamily: {
-        play: ["Lato", "sans-serif"],
+        lato: ["Lato",  "sans-serif"]
       },
       spacing: {
         '12px': '12px',
@@ -37,6 +42,7 @@ export default {
 
     },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require("daisyui")],
 }
 
