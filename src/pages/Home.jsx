@@ -35,7 +35,16 @@ export default function Home() {
         details="Gain the skills and confidence needed to stand out in the competitive job market and embark on a successful journey toward an in-demand banking career."
         btn="Explore All">
       </ModelTest>
+
       <BecomeExaminer></BecomeExaminer>
+
+      <ModelTest
+        top={`pt-[6.25rem]`}
+        subtitle="Top Rated Tests"
+        title="Explore Top Model Test Exams"
+        details="Dive into our curated selection of top-tier model tests, meticulously designed to elevate your preparation."
+        btn="Explore All">
+      </ModelTest>
 
 
     </Fragment>
