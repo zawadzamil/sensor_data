@@ -13,13 +13,6 @@ export default function Home() {
     <Fragment>
       <Hero></Hero>
       <Features></Features>
-      <Category top={`pt-[6rem]`}
-        subtitle={<Subtitle>Top Categories</Subtitle>}
-        title={<Title>Top Categories</Title>}
-        btn={<WhiteButton>Explore All</WhiteButton>}
-      >
-      </Category>
-
       <ModelTest
         top={`pt-[6rem]`}
         subtitle={<Subtitle >POPULAR COURSES</Subtitle>}
@@ -27,6 +20,14 @@ export default function Home() {
 
 
       ></ModelTest>
+      <Category top={`pt-[6rem]`}
+        subtitle={<Subtitle>Top Categories</Subtitle>}
+        title={<Title>Top Categories</Title>}
+        btn={<WhiteButton>Explore All</WhiteButton>}
+      >
+      </Category>
+
+
     </Fragment>
   );
 }

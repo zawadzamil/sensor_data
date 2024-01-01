@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
+import assets from "../assets/asset";
 import CourseCard from "./cards/CourseCard";
 import Filter from "./texts/Filter";
 
@@ -23,11 +24,38 @@ export default function ModelTest(props) {
         </div>
 
         {/* Cource Card */}
-        <div className="course-card mt-12  grid grid-cols-3 gap-6">
-          <CourseCard title='All In One - 2023 BCS Preparation Model test Bundle set.'></CourseCard>
-          <CourseCard></CourseCard>
-          <CourseCard></CourseCard>
-          <CourseCard></CourseCard>
+        <div className="course-card mt-12  grid grid-cols-3 gap-x-6  gap-y-16">
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course1}>
+          </CourseCard>
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course2}>
+          </CourseCard>
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course3}>
+          </CourseCard>
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course4}>
+          </CourseCard>
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course5}>
+          </CourseCard>
+          <CourseCard
+            title='All In One - 2023 BCS Preparation Model test Bundle set.'
+            price='199.00'
+            img={assets.course6}>
+          </CourseCard>
+
 
         </div>
       </section>
