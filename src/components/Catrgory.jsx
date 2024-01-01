@@ -7,7 +7,7 @@ import CategoryCard from "./cards/CategoryCard";
 export default function Catrgory(props) {
     return (
         <Fragment>
-            <section className="relative">
+            <section className="relative mt-24">
 
                 <div className={`myContainer bg-natural_bg_green pt-[4rem]`}>
                     <div className="top flex justify-between align-middle pt-[2rem] ">

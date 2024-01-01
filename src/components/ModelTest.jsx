@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
 import assets from "../assets/asset";
+import WhiteButton from "./buttons/WhiteButton";
 import CourseCard from "./cards/CourseCard";
 import Filter from "./texts/Filter";
+import Subtitle from "./texts/Subtitle";
+import Title from "./texts/Title";
 
 export default function ModelTest(props) {
   return (
@@ -10,10 +13,15 @@ export default function ModelTest(props) {
       <section className={`myContainer w-full ${props.top}`}>
         <div className="top flex justify-between align-middle">
           <div className="text-area flex flex-col">
-            {props.subtitle}
-            {props.title}
+            <Subtitle>{props.subtitle}</Subtitle>
+            <Title>{props.title}</Title>
           </div>
-          {props.btn}
+          <div className="button ">
+            {props.btn != "" || null ? <WhiteButton>{props.btn}</WhiteButton> : null}
+          </div>
+        </div>
+        <div className="details mt-4">
+          <Subtitle>{props.details}</Subtitle>
         </div>
         {/* Filter */}
         <div className="filter pt-[2.25rem]  flex gap-4">

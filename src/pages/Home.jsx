@@ -15,17 +15,25 @@ export default function Home() {
       <Features></Features>
       <ModelTest
         top={`pt-[6rem]`}
-        subtitle={<Subtitle >POPULAR COURSES</Subtitle>}
-        title={<Title>Give exam on the Trending Model-Tests.</Title>}
-
-
-      ></ModelTest>
+        subtitle="POPULAR COURSES"
+        title="Give exam on the Trending Model-Tests."
+        details=""
+        btn="">
+      </ModelTest>
       <Category top={`pt-[6rem]`}
         subtitle={<Subtitle>Top Categories</Subtitle>}
         title={<Title>Top Categories</Title>}
         btn={<WhiteButton>Explore All</WhiteButton>}
       >
       </Category>
+
+      <ModelTest
+        top={`pt-[5rem]`}
+        subtitle="100% Free"
+        title="Get Bank job-ready for an in-demand career"
+        details="Gain the skills and confidence needed to stand out in the competitive job market and embark on a successful journey toward an in-demand banking career."
+        btn="Explore All">
+      </ModelTest>
 
 
     </Fragment>
