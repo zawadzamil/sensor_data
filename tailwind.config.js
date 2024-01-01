@@ -15,6 +15,7 @@ export default {
         lite_blue: '#474D66',
         lite_green: '#429777',
         bg_green: '#DCF2EA',
+        bg_green_fade: '##F5FBF8',
         filter_green: '#317159',
         natural_bg_green: '#F4F6FA',
         badge_yellow: '#66460D',

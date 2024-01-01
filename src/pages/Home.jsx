@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import Category from "../components/Catrgory";
 import ModelTest from "../components/ModelTest";
 import WhiteButton from "../components/buttons/WhiteButton";
+import BecomeExaminer from "../components/home/BecomeExaminer";
 import Features from "../components/home/Features";
 import Hero from "../components/home/Hero";
 import Subtitle from "../components/texts/Subtitle";
@@ -34,6 +35,7 @@ export default function Home() {
         details="Gain the skills and confidence needed to stand out in the competitive job market and embark on a successful journey toward an in-demand banking career."
         btn="Explore All">
       </ModelTest>
+      <BecomeExaminer></BecomeExaminer>
 
 
     </Fragment>

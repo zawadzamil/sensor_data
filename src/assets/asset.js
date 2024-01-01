@@ -16,6 +16,8 @@ import pokerChip from './icons/PokerChip.png';
 import presentation from './icons/PresentationChart.svg';
 import userGear from './icons/UserCircleGear.png';
 import userMultiple from './icons/UserMultiple.png';
+import book from './images/Book.svg';
+import books from './images/books.svg';
 import cloud from './images/cloud.png';
 import course1 from './images/course1.png';
 import course2 from './images/course2.png';
@@ -54,6 +56,8 @@ const assets = {
     course4,
     course5,
     course6,
+    book,
+    books
 }
 
 export default assets;
