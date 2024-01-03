@@ -39,12 +39,13 @@ export default function Home() {
       <BecomeExaminer></BecomeExaminer>
 
       <ModelTest
-        top={`pt-[6.25rem]`}
+        top={`p-[6.25rem] `}
         subtitle="Top Rated Tests"
         title="Explore Top Model Test Exams"
         details="Dive into our curated selection of top-tier model tests, meticulously designed to elevate your preparation."
         btn="Explore All">
       </ModelTest>
+
 
 
     </Fragment>
