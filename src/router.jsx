@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import Layout from "./components/Layout";
+import Categories from "./pages/Categories";
+import Home from "./pages/Home";
 
 const routes = (
   <Routes>
@@ -9,6 +10,14 @@ const routes = (
       element={
         <Layout>
           <Home />
+        </Layout>
+      }
+    />
+    <Route
+      path="/categories"
+      element={
+        <Layout>
+          <Categories />
         </Layout>
       }
     />

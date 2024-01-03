@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 import { Fragment } from "react";
 
-export default function Heading({ text,style }) {
+export default function Heading({ text, style }) {
   const customStyles = style ? style : "";
   return (
     <Fragment>
@@ -12,7 +12,3 @@ export default function Heading({ text,style }) {
   );
 }
 
-Heading.propTypes = {
-  text: PropTypes.string.isRequired,
-  style: PropTypes.string
-};
