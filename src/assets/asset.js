@@ -14,6 +14,7 @@ import handFist from './icons/HandFist.png';
 import palette from './icons/Palette.svg';
 import pokerChip from './icons/PokerChip.png';
 import presentation from './icons/PresentationChart.svg';
+import SearchIconSVG from './icons/SearchIcon.svg';
 import userGear from './icons/UserCircleGear.png';
 import userMultiple from './icons/UserMultiple.png';
 import book from './images/Book.svg';
@@ -59,7 +60,8 @@ const assets = {
     course6,
     book,
     books,
-    Globe
+    Globe,
+    SearchIconSVG
 }
 
 export default assets;

@@ -37,6 +37,11 @@
   padding-left: 25rem;
   padding-right: 25rem;
 }
+.join-item {
+  font-size: 0.75rem;
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+}
 
 /* For screen size 1500 to 1979 */
 @media screen and (max-width: 1979px) and (min-width: 1500px) {
