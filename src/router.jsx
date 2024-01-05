@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Categories from "./pages/Categories";
+import CourseDetails from "./pages/CourseDetails";
 import Home from "./pages/Home";
 
 const routes = (
@@ -18,6 +19,15 @@ const routes = (
       element={
         <Layout>
           <Categories />
+        </Layout>
+      }
+    />
+
+    <Route
+      path="/course-details"
+      element={
+        <Layout>
+          <CourseDetails />
         </Layout>
       }
     />

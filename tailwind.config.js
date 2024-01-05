@@ -13,10 +13,12 @@ export default {
         title_green: '#52BD94',
         natural: '#101840',
         lite_blue: '#474D66',
+        fade_blue: '#696F8C',
         lite_green: '#429777',
         bg_green: '#DCF2EA',
-        bg_green_fade: '##F5FBF8',
+        bg_green_fade: '#F5FBF8',
         filter_green: '#317159',
+        deep_green: '#52BD94',
         natural_bg_green: '#F4F6FA',
         badge_yellow: '#66460D',
         badge_yellow_bg: '#FFEFD2'
