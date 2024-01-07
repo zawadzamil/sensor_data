@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import assets from "../assets/asset";
 import RegularHeader from "../components/RegularHeader";
+import IconBadge from "../components/badges/IconBadge";
 import Heading from "../components/headings/Heading";
 import Rating from "../components/rating/Rating";
 import FadeText from "../components/texts/FadeTexts";
@@ -19,7 +20,7 @@ export default function CourseDetails() {
                 </RegularHeader>
             </section>
             <section className="myContainer">
-                <div className="content grid grid-cols-3 gap-[7.44rem]">
+                <div className="content grid grid-cols-3 gap-[7.44rem] lg:gap-16">
                     <div className="description flex flex-col gap-4 col-span-2">
                         {/* Bundel Details */}
                         <Filter active={true}>BCS</Filter>
@@ -179,7 +180,7 @@ export default function CourseDetails() {
                                 <div className="collapse collapse-arrow rounded-none">
                                     <input type="radio" name="my-accordion-2" />
                                     <div className="collapse-title text-base font-600 font-lato text-lite_green border-solid border">
-                                        Test 1: Bangla
+                                        Test 2: English
                                     </div>
                                     <div className="collapse-content p-4 border-solid border border-t-0 flex justify-between">
                                         <div className="text">
@@ -201,7 +202,7 @@ export default function CourseDetails() {
                                 <div className="collapse collapse-arrow rounded-none">
                                     <input type="radio" name="my-accordion-2" />
                                     <div className="collapse-title text-base font-600 font-lato text-lite_green border-solid border ">
-                                        Test 1: Bangla
+                                        Test 3: Math
                                     </div>
                                     <div className="collapse-content p-4 border-solid border border-t-0 flex justify-between">
                                         <div className="text">
@@ -222,6 +223,79 @@ export default function CourseDetails() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="details col-span-1 flex p-4 gap-4 flex-col">
+                        <div className="image">
+                            <figure>
+                                <img src={assets.course1} alt="Course" className="w-full h-full object-cover" />
+                            </figure>
+                        </div>
+
+                        <div className="price flex gap-4 items-center">
+                            {/* Offer Price */}
+                            <span className="large_bold text-natural">$246.00</span>
+
+                            {/* Actual Price */}
+                            <FadeText className={`text-2xl line-through decoration-gray-500`}>$300</FadeText>
+                        </div>
+
+                        <div className="cart_button w-full">
+                            <button className="w-full bg-title_green px-[24px] py-[8px] rounded h-[3rem] font-600 text-16p text-white tracking-[0.5px]">
+                                <img src={assets.ShopingCart} alt="Cart" className="w-4 h-4 object-cover inline mr-2" />
+
+                                <span className="inline">Add to Cart</span>
+
+                            </button>
+                        </div>
+                        <div className="semi_lerge_bold text-filter_green">
+                            BCS Exam Prep 2023 Edition
+                        </div>
+
+                        <div className="courseDetails mt-2">
+                            <div className="flex justify-between border py-4 px-2">
+                                <IconBadge img={assets.UserSVG}
+                                    title="Examiner"></IconBadge>
+
+                                <span className="base_bold text-filter_green underline">Cristofer Jonas</span>
+                            </div>
+                            <div className="flex justify-between border border-t-0 py-4 px-2">
+                                <IconBadge img={assets.RefreshSVG}
+                                    title="Last Updated"></IconBadge>
+
+                                <span className="base_bold text-filter_green ">28 January, 2022</span>
+                            </div>
+
+                            <div className="flex justify-between border border-t-0 py-4 px-2">
+                                <IconBadge img={assets.TimeSVG}
+                                    title="Duration"></IconBadge>
+
+                                <span className="base_bold text-filter_green ">20:12:51 Hrs</span>
+                            </div>
+
+                            <div className="flex justify-between border border-t-0 py-4 px-2">
+                                <IconBadge img={assets.StudentSVG}
+                                    title="Enroll"></IconBadge>
+
+                                <span className="base_bold text-filter_green ">400</span>
+                            </div>
+
+
+                            <div className="flex justify-between border border-t-0 py-4 px-2">
+                                <IconBadge img={assets.StarSVG}
+                                    title="Review"></IconBadge>
+
+                                <Rating></Rating> <span className=".small_semibold">4(2)</span>
+                            </div>
+                        </div>
+
+                        <div className="tag mt-4 flex flex-col gap-4">
+                            <div className="base_bold font-600">
+                                Tags
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </section>

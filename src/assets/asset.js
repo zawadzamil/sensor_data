@@ -15,7 +15,13 @@ import palette from './icons/Palette.svg';
 import PlayIcon from './icons/Play.svg';
 import pokerChip from './icons/PokerChip.png';
 import presentation from './icons/PresentationChart.svg';
+import RefreshSVG from './icons/Refresh.svg';
 import SearchIconSVG from './icons/SearchIcon.svg';
+import ShopingCart from './icons/ShoppingCart.svg';
+import StarSVG from './icons/Star.svg';
+import StudentSVG from './icons/Student.svg';
+import TimeSVG from './icons/Time.svg';
+import UserSVG from './icons/User.svg';
 import userGear from './icons/UserCircleGear.png';
 import userMultiple from './icons/UserMultiple.png';
 import book from './images/Book.svg';
@@ -67,7 +73,13 @@ const assets = {
     SearchIconSVG,
     eclips,
     bundelCover,
-    PlayIcon
+    PlayIcon,
+    ShopingCart,
+    UserSVG,
+    RefreshSVG,
+    TimeSVG,
+    StudentSVG,
+    StarSVG
 }
 
 export default assets;

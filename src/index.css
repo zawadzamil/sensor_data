@@ -50,6 +50,30 @@
   line-height: 1.5rem;
 }
 
+.large_bold {
+  font-family: Lato;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.semi_lerge_bold {
+  font-family: Lato;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.base_bold {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
 /* For screen size 1500 to 1979 */
 @media screen and (max-width: 1979px) and (min-width: 1500px) {
   .myContainer {
