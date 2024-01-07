@@ -21,7 +21,8 @@ export default {
         deep_green: '#52BD94',
         natural_bg_green: '#F4F6FA',
         badge_yellow: '#66460D',
-        badge_yellow_bg: '#FFEFD2'
+        badge_yellow_bg: '#FFEFD2',
+        red_base: '#D14343'
       },
       fontWeight: {
         title: '400',

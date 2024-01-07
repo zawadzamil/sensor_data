@@ -71,7 +71,7 @@ export default function CourseDetails() {
                                 Reviews
                             </button>
                         </div>
-                        <div className="overview mt-6 flex flex-col gap-4">
+                        <div className="overview mt-6 flex flex-col gap-4 mb-16">
                             <Heading text='Overview'
                                 style={`text-[1.5rem] font-lite_blue`}></Heading>
 
@@ -81,12 +81,146 @@ export default function CourseDetails() {
                             <Heading text='What’s included inside the bundle?'
                                 style={`text-[1.5rem] font-lite_blue mt-6`}></Heading>
                             <ul className="list-none">
-                                <li className="flex gap-3">
+                                <li className="flex gap-3 pb-3">
                                     <div className="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="#474D66" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
 
+                                    <div className="text ">
+                                        <Paragraph>
+                                            <Heading text={`Comprehensive Subject Coverage: `}
+                                                style={`text-base`}>
+                                            </Heading>
+                                            Gain insights into the specific subjects and topics that constitute the BCS exam, ensuring focused preparation.</Paragraph>
+                                    </div>
+                                </li>
+
+                                <li className="flex gap-3 pb-3">
+                                    <div className="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="#474D66" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+
+                                    <div className="text ">
+                                        <Paragraph>
+                                            <Heading text={`Detailed Question Types: `}
+                                                style={`text-base`}>
+                                            </Heading>
+                                            Understand the various question formats that may appear on the exam, allowing you to tailor your study approach accordingly.</Paragraph>
+                                    </div>
+                                </li>
+
+                                <li className="flex gap-3 pb-3">
+                                    <div className="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="#474D66" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+
+                                    <div className="text ">
+                                        <Paragraph>
+                                            <Heading text={`Critical Exam Areas Highlighted: `}
+                                                style={`text-base`}>
+                                            </Heading>
+                                            Identify key areas and concepts that are crucial for success, providing a roadmap for targeted and efficient preparation.</Paragraph>
+                                    </div>
+                                </li>
+
+                                <li className="flex gap-3 pb-3">
+                                    <div className="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M10.875 8.625L14.625 12L10.875 15.375" stroke="#474D66" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+
+                                    <div className="text ">
+                                        <Paragraph>
+                                            <Heading text={`Strategic Insights for Success: `}
+                                                style={`text-base`}>
+                                            </Heading>
+                                            Uncover strategies and tips to navigate the BCS exam effectively, ensuring confidence and competence on exam day.</Paragraph>
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+
+                        <div className="bundel-content flex flex-col gap-6 ">
+
+                            <Heading text={`Bundel Content`}
+                                style={`text-2xl`}></Heading>
+
+                            {/* Accordion */}
+                            <div className="accordion flex flex-col gap-6 mb-24">
+                                <div className="collapse collapse-arrow rounded-none">
+                                    <input type="radio" name="my-accordion-2" />
+                                    <div className="collapse-title text-base font-600 font-lato text-lite_green border-solid border  border-lite_green">
+                                        Test 1: Bangla
+                                    </div>
+                                    <div className="collapse-content p-4 border-solid border border-lite_green border-t-0 flex justify-between">
+                                        <div className="text">
+                                            <span className="small_semibold text-lite_blue">Exam Duration: </span>
+
+                                            <span className="small_semibold text-red_base ms-2"> 01:15:00</span>
+                                        </div>
+
+                                        <div className="playButton flex gap-[0.38rem] items-center">
+                                            <div className="icon w-5 h-5">
+                                                <img src={assets.PlayIcon} alt="PlayIcon" className="w-full h-full object-cover" />
+                                            </div>
+                                            <div className="small_semibold text-deep_green font-bold">
+                                                Start Test
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow rounded-none">
+                                    <input type="radio" name="my-accordion-2" />
+                                    <div className="collapse-title text-base font-600 font-lato text-lite_green border-solid border">
+                                        Test 1: Bangla
+                                    </div>
+                                    <div className="collapse-content p-4 border-solid border border-t-0 flex justify-between">
+                                        <div className="text">
+                                            <span className="small_semibold text-lite_blue">Exam Duration: </span>
+
+                                            <span className="small_semibold text-red_base ms-2"> 01:15:00</span>
+                                        </div>
+
+                                        <div className="playButton flex gap-[0.38rem] items-center">
+                                            <div className="icon w-5 h-5">
+                                                <img src={assets.PlayIcon} alt="PlayIcon" className="w-full h-full object-cover" />
+                                            </div>
+                                            <div className="small_semibold text-deep_green font-bold">
+                                                Start Test
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="collapse collapse-arrow rounded-none">
+                                    <input type="radio" name="my-accordion-2" />
+                                    <div className="collapse-title text-base font-600 font-lato text-lite_green border-solid border ">
+                                        Test 1: Bangla
+                                    </div>
+                                    <div className="collapse-content p-4 border-solid border border-t-0 flex justify-between">
+                                        <div className="text">
+                                            <span className="small_semibold text-lite_blue">Exam Duration: </span>
+
+                                            <span className="small_semibold text-red_base ms-2"> 01:15:00</span>
+                                        </div>
+
+                                        <div className="playButton flex gap-[0.38rem] items-center">
+                                            <div className="icon w-5 h-5">
+                                                <img src={assets.PlayIcon} alt="PlayIcon" className="w-full h-full object-cover" />
+                                            </div>
+                                            <div className="small_semibold text-deep_green font-bold">
+                                                Start Test
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

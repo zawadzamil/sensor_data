@@ -12,6 +12,7 @@ import film from './icons/FilmStrip.svg';
 import graduationCap from './icons/GraduationCap.png';
 import handFist from './icons/HandFist.png';
 import palette from './icons/Palette.svg';
+import PlayIcon from './icons/Play.svg';
 import pokerChip from './icons/PokerChip.png';
 import presentation from './icons/PresentationChart.svg';
 import SearchIconSVG from './icons/SearchIcon.svg';
@@ -65,7 +66,8 @@ const assets = {
     Globe,
     SearchIconSVG,
     eclips,
-    bundelCover
+    bundelCover,
+    PlayIcon
 }
 
 export default assets;

@@ -4,11 +4,9 @@
 @tailwind utilities;
 
 .hero {
-  background: linear-gradient(
-    358deg,
-    #bdf4e0 23.27%,
-    rgba(220, 242, 234, 0) 79.38%
-  );
+  background: linear-gradient(358deg,
+      #bdf4e0 23.27%,
+      rgba(220, 242, 234, 0) 79.38%);
 }
 
 .custom-shape-divider-top-1703852338 {
@@ -37,10 +35,19 @@
   padding-left: 25rem;
   padding-right: 25rem;
 }
+
 .join-item {
   font-size: 0.75rem;
   font-family: Lato, sans-serif;
   font-weight: 600;
+}
+
+.small_semibold {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
 }
 
 /* For screen size 1500 to 1979 */
