@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import assets from "../assets/asset";
 import RegularHeader from "../components/RegularHeader";
+import CategoryBadge from "../components/badges/CategoryBadge";
 import IconBadge from "../components/badges/IconBadge";
 import Heading from "../components/headings/Heading";
 import Rating from "../components/rating/Rating";
@@ -292,6 +293,11 @@ export default function CourseDetails() {
                         <div className="tag mt-4 flex flex-col gap-4">
                             <div className="base_bold font-600">
                                 Tags
+                            </div>
+
+                            <div className="badges flex gap-4">
+                                <CategoryBadge className="text-lite_blue bg-fade_white px-3 py-1">BCS</CategoryBadge>
+                                <CategoryBadge className="text-lite_blue bg-fade_white px-3 py-1">Bank Job</CategoryBadge>
                             </div>
 
                         </div>

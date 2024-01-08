@@ -2,10 +2,10 @@
 import { Fragment } from "react";
 
 
-export default function CategoryBadge({ children }) {
+export default function CategoryBadge({ children, ...rest }) {
     return (
         <Fragment>
-            <span className="text-badge_yellow px-3 py-1 font-lato bg-badge_yellow_bg ">{children}</span>
+            <span className={` px-3 py-1 font-lato  `} {...rest}>{children}</span>
         </Fragment>
     )
 }
