@@ -57,6 +57,12 @@
   font-weight: 700;
   line-height: 2.5rem;
 }
+.extra_large_bold {
+  font-family: Lato;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+}
 
 .semi_lerge_bold {
   font-family: Lato;
@@ -72,6 +78,14 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
+}
+
+.base_normal{
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+
 }
 
 /* For screen size 1500 to 1979 */
