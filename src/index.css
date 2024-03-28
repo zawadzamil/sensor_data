@@ -50,6 +50,14 @@
   line-height: 1.5rem;
 }
 
+.small_normal {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
 .large_bold {
   font-family: Lato;
   font-size: 2rem;

@@ -3,6 +3,7 @@ import assets from "../assets/asset";
 import RegularHeader from "../components/RegularHeader";
 import CategoryBadge from "../components/badges/CategoryBadge";
 import IconBadge from "../components/badges/IconBadge";
+import CommentCard from "../components/cards/CommentCard";
 import Heading from "../components/headings/Heading";
 import Rating from "../components/rating/Rating";
 import FadeText from "../components/texts/FadeTexts";
@@ -227,100 +228,120 @@ export default function CourseDetails() {
                                 </div>
                             </div>
                         </div>
-                        <div className="review_section flex flex-col gap-2 mt-10">
+
+                        {/* Review Section */}
+                        <div className="review_section flex flex-col gap-2 mt-10 mb-20 ">
                             <Heading text='Overview'
                                 style={`text-[1.5rem] font-lite_blue`}></Heading>
 
                             <Subtitle> Ratings & reviews are verified.</Subtitle>
 
-                            <div className="reviews mt-2 p-6 flex justify-between">
-                                <div className="rating_count flex flex-col gap-3 justify-center items-center">
-                                    <span className="extra_large_bold text-natural">4.5</span>
-                                    <div className="rating mt-3">
-                                        <Rating></Rating>
+                            <div className="review_and_comments border-2 px-4 rounded-lg" >
+                                {/* Ratings */}
+                                <div className="reviews_details">
+                                    <div className="reviews mt-2 p-6 flex justify-between">
+                                        <div className="rating_count flex flex-col gap-3 justify-center items-center">
+                                            <span className="extra_large_bold text-natural">4.5</span>
+                                            <div className="rating mt-3">
+                                                <Rating></Rating>
+                                            </div>
+                                            <Subtitle>Total 2 Ratings</Subtitle>
+                                        </div>
+
+                                        <div className="rating_progress flex flex-col gap-2 mt-4">
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center ">
+                                                    <span className="base_normal">5</span>
+                                                    <div className="star mr-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                            <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
+                                                        </svg>
+                                                    </div>
+                                                    <progress className="progress progress-warning w-56" value="100" max="100"></progress>
+                                                </div>
+                                                <div className="count ml-8 small_semibold">
+                                                    2 rating
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center ">
+                                                    <span className="base_normal">4</span>
+                                                    <div className="star mr-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                            <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
+                                                        </svg>
+                                                    </div>
+                                                    <progress className="progress progress-warning w-56" value="0" max="100"></progress>
+                                                </div>
+                                                <div className="count ml-8 small_semibold">
+                                                    0 rating
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center ">
+                                                    <span className="base_normal">3</span>
+                                                    <div className="star mr-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                            <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
+                                                        </svg>
+                                                    </div>
+                                                    <progress className="progress progress-warning w-56" value="0" max="100"></progress>
+                                                </div>
+                                                <div className="count ml-8 small_semibold">
+                                                    0 rating
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center ">
+                                                    <span className="base_normal">2</span>
+                                                    <div className="star mr-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                            <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
+                                                        </svg>
+                                                    </div>
+                                                    <progress className="progress progress-warning w-56" value="0" max="100"></progress>
+                                                </div>
+                                                <div className="count ml-8 small_semibold">
+                                                    0 rating
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center ">
+                                                    <span className="base_normal">1</span>
+                                                    <div className="star mr-5">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                            <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
+                                                        </svg>
+                                                    </div>
+                                                    <progress className="progress progress-warning w-56" value="0" max="100"></progress>
+                                                </div>
+                                                <div className="count ml-8 small_semibold">
+                                                    0 rating
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <Subtitle>Total 2 Ratings</Subtitle>
                                 </div>
 
-                                <div className="rating_progress flex flex-col gap-2 mt-4">
-                                    <div className="flex justify-between">
-                                        <div className="flex items-center ">
-                                            <span className="base_normal">5</span>
-                                            <div className="star mr-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                    <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
-                                                </svg>
-                                            </div>
-                                            <progress className="progress progress-warning w-56" value="100" max="100"></progress>
-                                        </div>
-                                        <div className="count ml-8 small_semibold">
-                                            2 rating
-                                        </div>
-                                    </div>
+                                {/* Comments */}
 
-                                    <div className="flex justify-between">
-                                        <div className="flex items-center ">
-                                            <span className="base_normal">4</span>
-                                            <div className="star mr-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                    <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
-                                                </svg>
-                                            </div>
-                                            <progress className="progress progress-warning w-56" value="0" max="100"></progress>
-                                        </div>
-                                        <div className="count ml-8 small_semibold">
-                                            0 rating
-                                        </div>
-                                    </div>
+                                <div className="comments">
+                                    <CommentCard name="Sadman Arefin"
+                                        time="1 Hour Ago"
+                                        comment="This course is suitable for those who are trying to learn UX Design from the beginning. As a learner, I can say without any hesitation that if anyone is in a dilemma which course he/she should enroll, then it will be the best option for them.">
+                                    </CommentCard>
 
-                                    <div className="flex justify-between">
-                                        <div className="flex items-center ">
-                                            <span className="base_normal">3</span>
-                                            <div className="star mr-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                    <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
-                                                </svg>
-                                            </div>
-                                            <progress className="progress progress-warning w-56" value="0" max="100"></progress>
-                                        </div>
-                                        <div className="count ml-8 small_semibold">
-                                            0 rating
-                                        </div>
-                                    </div>
-
-                                    <div className="flex justify-between">
-                                        <div className="flex items-center ">
-                                            <span className="base_normal">2</span>
-                                            <div className="star mr-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                    <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
-                                                </svg>
-                                            </div>
-                                            <progress className="progress progress-warning w-56" value="0" max="100"></progress>
-                                        </div>
-                                        <div className="count ml-8 small_semibold">
-                                            0 rating
-                                        </div>
-                                    </div>
-
-                                    <div className="flex justify-between">
-                                        <div className="flex items-center ">
-                                            <span className="base_normal">1</span>
-                                            <div className="star mr-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                                    <path d="M13.1701 15.7492C13.0501 15.7497 12.9318 15.7214 12.8251 15.6667L9.00009 13.6642L5.17509 15.6667C4.92169 15.7999 4.61453 15.7773 4.38341 15.6083C4.15228 15.4394 4.03751 15.1536 4.08759 14.8717L4.83759 10.6492L1.74759 7.64918C1.55113 7.45313 1.479 7.16461 1.56009 6.89918C1.64877 6.62724 1.8844 6.42943 2.16759 6.38918L6.44259 5.76668L8.32509 1.91918C8.4504 1.66043 8.71259 1.49609 9.00009 1.49609C9.28758 1.49609 9.54977 1.66043 9.67509 1.91918L11.5801 5.75918L15.8551 6.38168C16.1383 6.42193 16.3739 6.61974 16.4626 6.89168C16.5437 7.15711 16.4715 7.44563 16.2751 7.64168L13.1851 10.6417L13.9351 14.8642C13.9898 15.1513 13.8727 15.444 13.6351 15.6142C13.4993 15.7093 13.3357 15.7568 13.1701 15.7492Z" fill="#FFC107" />
-                                                </svg>
-                                            </div>
-                                            <progress className="progress progress-warning w-56" value="0" max="100"></progress>
-                                        </div>
-                                        <div className="count ml-8 small_semibold">
-                                            0 rating
-                                        </div>
-                                    </div>
-
+                                    <CommentCard name="Zawad Zamil"
+                                        time="4 Days Ago"
+                                        comment="This is a very extensive and thorough course on web development taught by an excellent and passionate teacher. Angela explains difficult concepts in a simple way.">
+                                    </CommentCard>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
