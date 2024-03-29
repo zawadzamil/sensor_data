@@ -24,6 +24,7 @@ import TimeSVG from './icons/Time.svg';
 import UserSVG from './icons/User.svg';
 import userGear from './icons/UserCircleGear.png';
 import userMultiple from './icons/UserMultiple.png';
+import trashIcon from './icons/trash.png';
 import book from './images/Book.svg';
 import Globe from './images/Globe.svg';
 import books from './images/books.svg';
@@ -79,7 +80,8 @@ const assets = {
     RefreshSVG,
     TimeSVG,
     StudentSVG,
-    StarSVG
+    StarSVG,
+    trashIcon
 }
 
 export default assets;

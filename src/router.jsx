@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Categories from "./pages/Categories";
+import Checkout from "./pages/Checkout";
 import CourseDetails from "./pages/CourseDetails";
 import Home from "./pages/Home";
 
@@ -28,6 +29,14 @@ const routes = (
       element={
         <Layout>
           <CourseDetails />
+        </Layout>
+      }
+    />
+    <Route
+      path="/checkout"
+      element={
+        <Layout>
+          <Checkout />
         </Layout>
       }
     />
