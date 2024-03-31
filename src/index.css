@@ -95,6 +95,12 @@
   font-weight: 600;
 
 }
+.underline{
+  height: 1px;
+  align-self: stretch;
+  flex-grow: 0;
+  background-color: #d8dae5;
+}
 
 /* For screen size 1500 to 1979 */
 @media screen and (max-width: 1979px) and (min-width: 1500px) {

@@ -1,10 +1,11 @@
-/* eslint-disable react/prop-types */
+
+import { twMerge } from "tailwind-merge";
 
 
-export default function Title({children, ...rest}) {
+export default function Title({ children, className }) {
   return (
-   <span className={`font-bold font-lato text-[2.25rem] text-natural`}{...rest}>
-    {children}
-   </span>
+    <span className={twMerge("font-bold font-lato text-[2.25rem] text-natural", className)}>
+      {children}
+    </span>
   )
 }

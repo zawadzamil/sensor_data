@@ -1,12 +1,15 @@
 import { Fragment } from "react";
+import assets from "../assets/asset";
+import MinimalCourseCard from "../components/cards/MinimalCourseCard";
 import CartItem from "../components/checkout/CartItem";
 import OrderSummary from "../components/checkout/OrderSummary";
+import Title from "../components/texts/Title";
 
 
 export default function Checkout() {
     return (
         <Fragment>
-            <section className="myContainer mt-20">
+            <section className="myContainer mt-20 mb-20 ">
                 {/* Checkout List */}
                 <div className="checkout_list">
                     <h2 className="large_bold">Checkout List</h2>
@@ -26,7 +29,41 @@ export default function Checkout() {
                         </div>
                     </div>
                 </div>
+
+                {/* Suggested */}
+                <div className="sugessted mt-20">
+                    <h3 className="small_semibold text-lite_blue"> Suggested </h3>
+                    <Title className="text-3xl mt-2">You might also like</Title>
+
+                    <div className="cards mt-9">
+                        <div className="grid grid-cols-4 gap-6">
+                            <MinimalCourseCard
+                                title="BCS Exam Prep (2023 Edition)"
+                                img={assets.course1}
+                                price={`$` + `199.00`}
+                            ></MinimalCourseCard>
+
+                            <MinimalCourseCard
+                                title="BCS Exam Prep (2023 Edition)"
+                                img={assets.course2}
+                                price={`$` + `199.00`}
+                            ></MinimalCourseCard>
+
+                            <MinimalCourseCard
+                                title="BCS Exam Prep (2023 Edition)"
+                                img={assets.course3}
+                                price={`$` + `199.00`}
+                            ></MinimalCourseCard>
+
+                            <MinimalCourseCard
+                                title="BCS Exam Prep (2023 Edition)"
+                                img={assets.course4}
+                                price={`$` + `199.00`}
+                            ></MinimalCourseCard>
+                        </div>
+                    </div>
+                </div>
             </section>
-        </Fragment>
+        </Fragment >
     )
 }

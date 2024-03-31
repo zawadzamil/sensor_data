@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
+import { twMerge } from "tailwind-merge";
 
 
-export default function CategoryBadge({ children, ...rest }) {
+export default function CategoryBadge({ children, className }) {
     return (
         <Fragment>
-            <span className={` px-3 py-1 font-lato  `} {...rest}>{children}</span>
+            <span className={twMerge("px-3 py-1 font-lato", className)}>{children}</span>
         </Fragment>
     )
 }

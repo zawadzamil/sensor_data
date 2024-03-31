@@ -41,13 +41,13 @@ export default function Navbar() {
               <ul className="flex justify-start items-center font-lato  lg:flex-row list-none lg:ml-auto gap-4 ps-4 ">
                 <li className="nav-item">
                   <a href="#">
-                    <Title title="Home"></Title>
+                    <Title >Home</Title>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="#">
                     <div className="category flex items-center gap-0">
-                      <Title title="Categories"></Title>
+                      <Title >Categories</Title>
                       <span className=" ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ export default function Navbar() {
                 </li>
                 <li className="nav-item">
                   <a href="#">
-                    <Title title="Become an Examiner"></Title>
+                    <Title>Become an Examiner</Title>
                   </a>
                 </li>
               </ul>
