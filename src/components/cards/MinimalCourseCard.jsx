@@ -10,9 +10,9 @@ export default function MinimalCourseCard(props) {
             <div className="card bg-base-100 shadow-xl ">
                 <figure><img src={props.img} alt="ModelTest" className="w-full h-[9rem]  object-cover rounded-t-md" /></figure>
                 <div className="card-body p-4 flex flex-col">
-                    <div className="rating">
+                    <div className="rating flex items-center">
                         <Rating></Rating>
-                        <span className="base_normal">4.6</span>
+                        <span className="base_normal ms-2">4.6</span>
                     </div>
 
                     <Title className="text-lg mt-4 overflow-hidden">{props.title}</Title>
