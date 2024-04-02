@@ -4,6 +4,7 @@ import Categories from "./pages/Categories";
 import Checkout from "./pages/Checkout";
 import CourseDetails from "./pages/CourseDetails";
 import Home from "./pages/Home";
+import PurchesedBundles from "./pages/PurchesedBundles";
 
 const routes = (
   <Routes>
@@ -37,6 +38,15 @@ const routes = (
       element={
         <Layout>
           <Checkout />
+        </Layout>
+      }
+    />
+
+    <Route
+      path="/my-purchased-bundles"
+      element={
+        <Layout>
+          <PurchesedBundles />
         </Layout>
       }
     />
