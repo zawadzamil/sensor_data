@@ -17,7 +17,7 @@ export default function MinimalCourseCard(props) {
 
                     <Title className="text-lg mt-4 overflow-hidden">{props.title}</Title>
                     <Subtitle> Cristofer Jonas</Subtitle>
-                    <span className="underline my-3"></span>
+                    <span className="underline_gray my-3"></span>
 
                     <div className="pricing flex justify-between mt-[1rem]">
                         <Title className="text-lg">{props.price}</Title>

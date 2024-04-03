@@ -32,7 +32,7 @@ export default function CourseCard(props) {
                         </IconBadge>
 
                     </div>
-                    <div className="underline my-5">
+                    <div className="underline_gray my-5">
                         <hr className="w-full" />
                     </div>
 

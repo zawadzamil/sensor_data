@@ -377,7 +377,7 @@ export default function CourseDetails() {
                                 <IconBadge img={assets.UserSVG}
                                     title="Examiner"></IconBadge>
 
-                                <span className="base_bold text-filter_green underline">Cristofer Jonas</span>
+                                <span className="base_bold text-filter_green underline_gray">Cristofer Jonas</span>
                             </div>
                             <div className="flex justify-between border border-t-0 py-4 px-2">
                                 <IconBadge img={assets.RefreshSVG}
