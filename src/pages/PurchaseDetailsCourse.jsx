@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import assets from "../assets/asset";
 import Test from "../components/Purched Details Course/Test";
 import Title from "../components/texts/Title";
 
@@ -73,11 +74,43 @@ export default function PurchaseDetailsCourse() {
       {/* Tests */}
       <section className="myContainer mt-16 mb-24">
         <div className="tests flex flex-col gap-5">
-          <Test></Test>
-          <Test></Test>
-          <Test></Test>
-          <Test></Test>
-          <Test></Test>
+          <Test complete={true}
+            title="Test 01 - Bangla"
+            img={assets.course2}
+            totalQuestions={50}
+            totalPoints={100}
+            attampts={2}
+            duration="01:15:00"></Test>
+
+          <Test complete={true}
+            title="Test 02 - English"
+            img={assets.course4}
+            totalQuestions={30}
+            totalPoints={100}
+            attampts={5}
+            duration="01:15:00"></Test>
+
+          <Test complete={false}
+            title="Test 3 - Social Science"
+            img={assets.course2}
+            totalQuestions={50}
+            totalPoints={100}
+            attampts={2}
+            duration="01:15:00"></Test>
+
+          <Test complete={false}
+            title="Test 4 - Social Science"
+            img={assets.course4}
+            totalQuestions={20}
+            duration="01:15:00"
+          ></Test>
+
+          <Test complete={false}
+            title="Test 5 - Social Science"
+            img={assets.course5}
+            totalQuestions={20}
+            duration="01:15:00"
+          ></Test>
 
         </div>
       </section>
