@@ -4,6 +4,7 @@ import Categories from "./pages/Categories";
 import Checkout from "./pages/Checkout";
 import CourseDetails from "./pages/CourseDetails";
 import Home from "./pages/Home";
+import ModelTest from "./pages/ModelTest";
 import PurchaseDetailsCourse from "./pages/PurchaseDetailsCourse";
 import PurchesedBundles from "./pages/PurchesedBundles";
 
@@ -57,6 +58,15 @@ const routes = (
       element={
         <Layout>
           <PurchaseDetailsCourse />
+        </Layout>
+      }
+    />
+
+    <Route
+      path="/test"
+      element={
+        <Layout>
+          <ModelTest />
         </Layout>
       }
     />

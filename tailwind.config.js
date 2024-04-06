@@ -23,7 +23,8 @@ export default {
         badge_yellow: '#66460D',
         badge_yellow_bg: '#FFEFD2',
         red_base: '#D14343',
-        fade_white: '#EDEFF5'
+        fade_white: '#EDEFF5',
+        line:'#C1C4D6'
       },
       fontWeight: {
         title: '400',
