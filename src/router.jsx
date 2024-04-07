@@ -65,9 +65,7 @@ const routes = (
     <Route
       path="/test"
       element={
-        <Layout>
-          <ModelTest />
-        </Layout>
+        <ModelTest />
       }
     />
   </Routes>
