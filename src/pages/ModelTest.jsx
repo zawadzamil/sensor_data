@@ -2,6 +2,14 @@ import { Fragment } from "react";
 import Subtitle from "../components/texts/Subtitle";
 import Title from "../components/texts/Title";
 
+import React, { useState } from 'react';
+
+const [checked, setChecked] = useState(false);
+
+const handleRadioChange = (event) => {
+    setChecked(event.target.checked)
+}
+
 export default function ModelTest() {
     return (
         <Fragment>
@@ -49,21 +57,34 @@ export default function ModelTest() {
 
                     {/* Options */}
                     <div className="options flex flex-col gap-4 mt-6">
+
                         <div className="option flex items-center gap-3">
-                            <input type="radio" id="radio1" name="radio" className="radio radio-sm checked:bg-gray-500" />
-                            <label for="radio1" className="base_semibold">Dhaka</label>
+                            <input type="radio"
+                                id="radio1"
+                                name="radio"
+                                className="radio radio-sm checked:bg-gray-500"
+                                checked={checked}
+                                onChange={handleRadioChange} />
+                            <label for="radio1" className={checked ? `base_semibold` : `base_thin`}>Dhaka</label>
                         </div>
+
                         <div className="option flex items-center gap-3">
-                            <input type="radio" id="radio2" name="radio" className="radio radio-sm checked:bg-gray-500" />
+                            <input type="radio"
+                                id="radio2"
+                                name="radio"
+                                className="radio radio-sm checked:bg-gray-500"
+                                checked={checked}
+                                onChange={handleRadioChange} />
                             <label for="radio2" className="base_semibold">Dhaka</label>
                         </div>
                         <div className="option flex items-center gap-3">
-                            <input type="radio" id="radio3" name="radio" className="radio radio-sm checked:bg-gray-500" />
-                            <label for="radio3" className="base_semibold">Dhaka</label>
-                        </div>
-                        <div className="option flex items-center gap-3">
-                            <input type="radio" id="radio4" name="radio" className="radio radio-sm checked:bg-gray-500" />
-                            <label for="radio4" className="base_semibold">Dhaka</label>
+                            <input type="radio"
+                                id="radio2"
+                                name="radio"
+                                className="radio radio-sm checked:bg-gray-500"
+                                checked={checked}
+                                onChange={handleRadioChange} />
+                            <label for="radio2" className="base_semibold">Dhaka</label>
                         </div>
 
                     </div>
