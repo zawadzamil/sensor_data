@@ -1,14 +1,11 @@
 import { Fragment } from "react";
+import GreenButton from "../components/buttons/GreenButton";
+import WhiteButton from "../components/buttons/WhiteButton";
+import Question from "../components/cards/Question";
 import Subtitle from "../components/texts/Subtitle";
 import Title from "../components/texts/Title";
 
-import React, { useState } from 'react';
 
-const [checked, setChecked] = useState(false);
-
-const handleRadioChange = (event) => {
-    setChecked(event.target.checked)
-}
 
 export default function ModelTest() {
     return (
@@ -17,12 +14,12 @@ export default function ModelTest() {
                 <Title>Test 1</Title>
                 <div className="details mt-6 flex justify-between">
                     <div className="left w-4/12">
-                        <div class="flex items-center justify-between">
-                            <Subtitle class="text-natural  mr-2 text-md ">Total Questions :
+                        <div className="flex items-center justify-between">
+                            <Subtitle className="text-natural  mr-2 text-md ">Total Questions :
                                 <span className="font-bold ms-2">50</span>
                             </Subtitle>
-                            <span class="text-line base_thin">|</span>
-                            <Subtitle class="text-natural base_thin ml-2">Total Points :
+                            <span className="text-line base_thin">|</span>
+                            <Subtitle className="text-natural base_thin ml-2">Total Points :
                                 <span>100</span>
                             </Subtitle>
                         </div>
@@ -36,7 +33,7 @@ export default function ModelTest() {
                 </div>
             </section>
 
-            <section className="myContainer mt-16">
+            <section className="myContainer mt-16 h-fit mb-24 ">
                 {/* Title */}
                 <div className="title px-6 py-3 flex bg-fade_white justify-between rounded-t-md">
                     <div className="name">
@@ -49,48 +46,19 @@ export default function ModelTest() {
                         <Subtitle>Question : 1 to 5</Subtitle>
                     </div>
                 </div>
-                <div className="question mt-9 px-9 py-8">
-                    <div className="q_title flex justify-between items-center">
-                        <h3 className="base_bold">What is the capital of Bangladesh?</h3>
-                        <h3 className="base_thin">Points : <span className="font-bold"> 2</span></h3>
+                <Question></Question>
+                <Question></Question>
+                <Question></Question>
+
+                <div className="buttons mt-14">
+                    <div className="buttons_right flex justify-end gap-6">
+                        <WhiteButton className="base_semibold px-12">Cancel</WhiteButton>
+                        <GreenButton className="base_semibold px-12">Submit</GreenButton>
                     </div>
-
-                    {/* Options */}
-                    <div className="options flex flex-col gap-4 mt-6">
-
-                        <div className="option flex items-center gap-3">
-                            <input type="radio"
-                                id="radio1"
-                                name="radio"
-                                className="radio radio-sm checked:bg-gray-500"
-                                checked={checked}
-                                onChange={handleRadioChange} />
-                            <label for="radio1" className={checked ? `base_semibold` : `base_thin`}>Dhaka</label>
-                        </div>
-
-                        <div className="option flex items-center gap-3">
-                            <input type="radio"
-                                id="radio2"
-                                name="radio"
-                                className="radio radio-sm checked:bg-gray-500"
-                                checked={checked}
-                                onChange={handleRadioChange} />
-                            <label for="radio2" className="base_semibold">Dhaka</label>
-                        </div>
-                        <div className="option flex items-center gap-3">
-                            <input type="radio"
-                                id="radio2"
-                                name="radio"
-                                className="radio radio-sm checked:bg-gray-500"
-                                checked={checked}
-                                onChange={handleRadioChange} />
-                            <label for="radio2" className="base_semibold">Dhaka</label>
-                        </div>
-
-                    </div>
-
                 </div>
             </section>
+
+
         </Fragment>
     )
 }
