@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import GreenButton from "../components/buttons/GreenButton";
 import WhiteButton from "../components/buttons/WhiteButton";
-import Question from "../components/cards/Question";
+import Question from "../components/model-test/Question";
 import Subtitle from "../components/texts/Subtitle";
 import Title from "../components/texts/Title";
 

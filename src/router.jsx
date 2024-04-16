@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ModelTest from "./pages/ModelTest";
 import PurchaseDetailsCourse from "./pages/PurchaseDetailsCourse";
 import PurchesedBundles from "./pages/PurchesedBundles";
+import TestResult from "./pages/TestResult";
 
 const routes = (
   <Routes>
@@ -66,6 +67,13 @@ const routes = (
       path="/test"
       element={
         <ModelTest />
+      }
+    />
+
+    <Route
+      path="/result"
+      element={
+        <TestResult />
       }
     />
   </Routes>
