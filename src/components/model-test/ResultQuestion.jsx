@@ -1,8 +1,13 @@
-import React, { Fragment } from 'react'
-import Radio from './Radio'
-import ResultRadio from './ResultRadio'
+import React, { Fragment } from 'react';
+import ResultRadio from './ResultRadio';
 
 export default function Question(props) {
+    const options = [
+        { id: '1', value: 'A', label: 'Option A', correct: false, selected: true },
+        { id: '2', value: 'B', label: 'Option B', correct: true },
+        { id: '3', value: 'C', label: 'Option C', correct: false, selected: true },
+        { id: '4', value: 'D', label: 'Option D', correct: false },
+    ];
     return (
         <Fragment>
             <div className="question mt-9 px-9 py-8 shadow-lg shadow-gray-200 rounded-md">
@@ -18,10 +23,20 @@ export default function Question(props) {
                 {/* Options */}
                 <div className="options flex flex-col gap-4 mt-6">
 
-                    <ResultRadio id="radio1" value="dhaka" label="Dhaka" selected={true} correct={true} ></ResultRadio>
-                    <Radio id="radio2" value="Khulna" label="Khulna"></Radio>
-                    <Radio id="radio3" value="Magura" label="Magura"></Radio>
-                    <Radio id="radio4" value="Sylet" label="Sylet"></Radio>
+                    <div>
+                        {options.map((option) => (
+                            <ResultRadio
+                                key={option.id}
+                                id={option.id}
+                                value={option.value}
+                                label={option.label}
+                                correct={option.correct}
+                                selected={option.selected}
+                            />
+                        ))}
+                    </div>
+
+
                 </div>
 
             </div>

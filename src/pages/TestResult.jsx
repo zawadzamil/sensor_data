@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import GreenButton from "../components/buttons/GreenButton";
 import WhiteButton from "../components/buttons/WhiteButton";
-import Question from "../components/model-test/Question";
 import ResultQuestion from "../components/model-test/ResultQuestion";
 import Subtitle from "../components/texts/Subtitle";
 import Title from "../components/texts/Title";
@@ -60,15 +59,17 @@ export default function TestResult() {
                         <Subtitle>Question : 1 to 5</Subtitle>
                     </div>
                 </div>
-                <ResultQuestion correct={false}
+                <ResultQuestion correct={true} correctOpt="radio1"
+                    point={2}></ResultQuestion>
+                <ResultQuestion correct={false} correctOpt="radio1"
                     point={0}></ResultQuestion>
-                <Question></Question>
-                <Question></Question>
+                <ResultQuestion correct={false} correctOpt="radio1"
+                    point={0}></ResultQuestion>
 
                 <div className="buttons mt-14">
                     <div className="buttons_right flex justify-end gap-6">
-                        <WhiteButton className="base_semibold px-12">Cancel</WhiteButton>
-                        <GreenButton className="base_semibold px-12">Submit</GreenButton>
+                        <WhiteButton className="base_semibold px-12">Give Exam</WhiteButton>
+                        <GreenButton className="base_semibold px-12">Continue</GreenButton>
                     </div>
                 </div>
             </section>
