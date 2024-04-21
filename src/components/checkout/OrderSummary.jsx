@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import GreenButton from "../buttons/GreenButton";
 
 export default function OrderSummary() {
@@ -11,7 +12,8 @@ export default function OrderSummary() {
                     <h3 className="base_normal text-natural">$ 690.00</h3>
                 </div>
                 <div className="mt-16">
-                    <GreenButton className="h-fit text-md font-400">Proceed to Checkout</GreenButton>
+                    <Link to='/my-purchased-bundles'>
+                        <GreenButton className="h-fit text-md font-400">Proceed to Checkout</GreenButton></Link>
                 </div>
             </div>
         </Fragment>

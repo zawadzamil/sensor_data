@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link, useLocation } from 'react-router-dom';
 import assets from "../assets/asset";
 import RegularHeader from "../components/RegularHeader";
 import CategoryBadge from "../components/badges/CategoryBadge";
@@ -12,8 +13,13 @@ import Paragraph from "../components/texts/Paragraph";
 import SmallTitle from "../components/texts/SmallTitle";
 import Subtitle from "../components/texts/Subtitle";
 import Title from "../components/texts/Title";
+export default function CourseDetails(props) {
 
-export default function CourseDetails() {
+
+    const location = useLocation();
+    const { state } = location.state || {};
+
+    console.log(location)
     return (
         <Fragment>
             <section className="mb-20">
@@ -364,7 +370,9 @@ export default function CourseDetails() {
                             <button className="w-full bg-title_green px-[24px] py-[8px] rounded h-[3rem] font-600 text-16p text-white tracking-[0.5px]">
                                 <img src={assets.ShopingCart} alt="Cart" className="w-4 h-4 object-cover inline mr-2" />
 
-                                <span className="inline">Add to Cart</span>
+                                <Link to='/checkout'>
+                                    <span className="inline">Add to Cart</span>
+                                </Link>
 
                             </button>
                         </div>

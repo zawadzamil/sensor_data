@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import GreenButton from "../buttons/GreenButton";
 import WhiteButton from "../buttons/WhiteButton";
 import Subtitle from "../texts/Subtitle";
@@ -36,20 +37,26 @@ export default function Test(props) {
                     <div className="buttons flex">
                         {props.complete ?
                             <span className="flex">
-                                <a className="base-normal text-title_green px-6 py-3 underline" href="#">View Answers</a>
+                                <Link to='/result'>
+                                    <a className="base-normal text-title_green px-6 py-3 underline" >View Answers</a>
+                                </Link>
 
-                                <WhiteButton className="logo_in_btn text-md font-600 tracking-[.5px]" >Retake Exam
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7 7.29023L9.69999 2.29023C9.51999 2.10023 9.26999 1.99023 8.98999 1.99023C8.43999 1.99023 7.98999 2.44023 7.98999 2.99023C7.98999 3.27023 8.09999 3.52023 8.27999 3.70023L11.57 6.99023H1.98999C1.43999 6.99023 0.98999 7.44023 0.98999 7.99023C0.98999 8.54023 1.43999 8.99023 1.98999 8.99023H11.58L8.28999 12.2802C8.10999 12.4602 7.99999 12.7102 7.99999 12.9902C7.99999 13.5402 8.44999 13.9902 8.99999 13.9902C9.27999 13.9902 9.52999 13.8802 9.70999 13.7002L14.71 8.70023C14.89 8.52023 15 8.27023 15 7.99023C15 7.71023 14.88 7.47023 14.7 7.29023Z" fill="#52BD94" />
-                                    </svg>
-                                </WhiteButton>
+                                <Link to='/test'>
+                                    <WhiteButton className="logo_in_btn text-md font-600 tracking-[.5px]" >Retake Exam
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7 7.29023L9.69999 2.29023C9.51999 2.10023 9.26999 1.99023 8.98999 1.99023C8.43999 1.99023 7.98999 2.44023 7.98999 2.99023C7.98999 3.27023 8.09999 3.52023 8.27999 3.70023L11.57 6.99023H1.98999C1.43999 6.99023 0.98999 7.44023 0.98999 7.99023C0.98999 8.54023 1.43999 8.99023 1.98999 8.99023H11.58L8.28999 12.2802C8.10999 12.4602 7.99999 12.7102 7.99999 12.9902C7.99999 13.5402 8.44999 13.9902 8.99999 13.9902C9.27999 13.9902 9.52999 13.8802 9.70999 13.7002L14.71 8.70023C14.89 8.52023 15 8.27023 15 7.99023C15 7.71023 14.88 7.47023 14.7 7.29023Z" fill="#52BD94" />
+                                        </svg>
+                                    </WhiteButton>
+                                </Link>
                             </span>
                             :
-                            <GreenButton className="logo_in_btn"  >Give Exam
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7 7.29023L9.69999 2.29023C9.51999 2.10023 9.26999 1.99023 8.98999 1.99023C8.43999 1.99023 7.98999 2.44023 7.98999 2.99023C7.98999 3.27023 8.09999 3.52023 8.27999 3.70023L11.57 6.99023H1.98999C1.43999 6.99023 0.98999 7.44023 0.98999 7.99023C0.98999 8.54023 1.43999 8.99023 1.98999 8.99023H11.58L8.28999 12.2802C8.10999 12.4602 7.99999 12.7102 7.99999 12.9902C7.99999 13.5402 8.44999 13.9902 8.99999 13.9902C9.27999 13.9902 9.52999 13.8802 9.70999 13.7002L14.71 8.70023C14.89 8.52023 15 8.27023 15 7.99023C15 7.71023 14.88 7.47023 14.7 7.29023Z" fill="white" />
-                                </svg>
-                            </GreenButton>
+                            <Link to='/test'>
+                                <GreenButton className="logo_in_btn"  >Give Exam
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7 7.29023L9.69999 2.29023C9.51999 2.10023 9.26999 1.99023 8.98999 1.99023C8.43999 1.99023 7.98999 2.44023 7.98999 2.99023C7.98999 3.27023 8.09999 3.52023 8.27999 3.70023L11.57 6.99023H1.98999C1.43999 6.99023 0.98999 7.44023 0.98999 7.99023C0.98999 8.54023 1.43999 8.99023 1.98999 8.99023H11.58L8.28999 12.2802C8.10999 12.4602 7.99999 12.7102 7.99999 12.9902C7.99999 13.5402 8.44999 13.9902 8.99999 13.9902C9.27999 13.9902 9.52999 13.8802 9.70999 13.7002L14.71 8.70023C14.89 8.52023 15 8.27023 15 7.99023C15 7.71023 14.88 7.47023 14.7 7.29023Z" fill="white" />
+                                    </svg>
+                                </GreenButton>
+                            </Link>
                         }
                     </div>
                 </div>

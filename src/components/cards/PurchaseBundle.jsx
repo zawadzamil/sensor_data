@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import GreenButton from "../buttons/GreenButton";
 import Subtitle from "../texts/Subtitle";
 
@@ -37,11 +38,13 @@ export default function PurchaseBundle(props) {
                 </div>
 
                 <div className="buttons col-span-3">
-                    <GreenButton className="flex w-full max-w-[20rem] justify-center  items-center gap-1">Give Test
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7002 7.29023L9.70023 2.29023C9.52023 2.10023 9.27023 1.99023 8.99023 1.99023C8.44023 1.99023 7.99023 2.44023 7.99023 2.99023C7.99023 3.27023 8.10023 3.52023 8.28023 3.70023L11.5702 6.99023H1.99023C1.44023 6.99023 0.990234 7.44023 0.990234 7.99023C0.990234 8.54023 1.44023 8.99023 1.99023 8.99023H11.5802L8.29023 12.2802C8.11023 12.4602 8.00023 12.7102 8.00023 12.9902C8.00023 13.5402 8.45023 13.9902 9.00023 13.9902C9.28023 13.9902 9.53023 13.8802 9.71023 13.7002L14.7102 8.70023C14.8902 8.52023 15.0002 8.27023 15.0002 7.99023C15.0002 7.71023 14.8802 7.47023 14.7002 7.29023Z" fill="white" />
-                        </svg>
-                    </GreenButton>
+                    <Link to='/test'>
+                        <GreenButton className="flex w-full max-w-[20rem] justify-center  items-center gap-1">Give Test
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7002 7.29023L9.70023 2.29023C9.52023 2.10023 9.27023 1.99023 8.99023 1.99023C8.44023 1.99023 7.99023 2.44023 7.99023 2.99023C7.99023 3.27023 8.10023 3.52023 8.28023 3.70023L11.5702 6.99023H1.99023C1.44023 6.99023 0.990234 7.44023 0.990234 7.99023C0.990234 8.54023 1.44023 8.99023 1.99023 8.99023H11.5802L8.29023 12.2802C8.11023 12.4602 8.00023 12.7102 8.00023 12.9902C8.00023 13.5402 8.45023 13.9902 9.00023 13.9902C9.28023 13.9902 9.53023 13.8802 9.71023 13.7002L14.7102 8.70023C14.8902 8.52023 15.0002 8.27023 15.0002 7.99023C15.0002 7.71023 14.8802 7.47023 14.7002 7.29023Z" fill="white" />
+                            </svg>
+                        </GreenButton>
+                    </Link>
                 </div>
 
 

@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import GreenButton from "../components/buttons/GreenButton";
 import WhiteButton from "../components/buttons/WhiteButton";
 import Question from "../components/model-test/Question";
@@ -52,8 +53,12 @@ export default function ModelTest() {
 
                 <div className="buttons mt-14">
                     <div className="buttons_right flex justify-end gap-6">
-                        <WhiteButton className="base_semibold px-12">Cancel</WhiteButton>
-                        <GreenButton className="base_semibold px-12">Submit</GreenButton>
+                        <Link to='/purchased-details-course'>
+                            <WhiteButton className="base_semibold px-12">Cancel</WhiteButton>
+                        </Link>
+                        <Link to='/result'>
+                            <GreenButton className="base_semibold px-12">Submit</GreenButton>
+                        </Link>
                     </div>
                 </div>
             </section>

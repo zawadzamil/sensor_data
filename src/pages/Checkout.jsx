@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import assets from "../assets/asset";
 import MinimalCourseCard from "../components/cards/MinimalCourseCard";
 import CartItem from "../components/checkout/CartItem";
@@ -37,29 +38,38 @@ export default function Checkout() {
 
                     <div className="cards mt-9">
                         <div className="grid grid-cols-4 gap-6">
-                            <MinimalCourseCard
-                                title="BCS Exam Prep (2023 Edition)"
-                                img={assets.course1}
-                                price={`$` + `199.00`}
-                            ></MinimalCourseCard>
+                            <Link to='/course-details'>
+                                <MinimalCourseCard
+                                    title="BCS Exam Prep (2023 Edition)"
+                                    img={assets.course1}
+                                    price={`$` + `199.00`}
+                                ></MinimalCourseCard>
+                            </Link>
 
-                            <MinimalCourseCard
-                                title="BCS Exam Prep (2023 Edition)"
-                                img={assets.course2}
-                                price={`$` + `199.00`}
-                            ></MinimalCourseCard>
+                            <Link to='/course-details'>
+                                <MinimalCourseCard
+                                    title="BCS Exam Prep (2023 Edition)"
+                                    img={assets.course2}
+                                    price={`$` + `199.00`}
+                                ></MinimalCourseCard>
+                            </Link>
 
-                            <MinimalCourseCard
-                                title="BCS Exam Prep (2023 Edition)"
-                                img={assets.course3}
-                                price={`$` + `199.00`}
-                            ></MinimalCourseCard>
+                            <Link to='/course-details'>
+                                <MinimalCourseCard
+                                    title="BCS Exam Prep (2023 Edition)"
+                                    img={assets.course3}
+                                    price={`$` + `199.00`}
+                                ></MinimalCourseCard>
+                            </Link>
 
-                            <MinimalCourseCard
-                                title="BCS Exam Prep (2023 Edition)"
-                                img={assets.course4}
-                                price={`$` + `199.00`}
-                            ></MinimalCourseCard>
+
+                            <Link to='/course-details'>
+                                <MinimalCourseCard
+                                    title="BCS Exam Prep (2023 Edition)"
+                                    img={assets.course4}
+                                    price={`$` + `199.00`}
+                                ></MinimalCourseCard>
+                            </Link>
                         </div>
                     </div>
                 </div>

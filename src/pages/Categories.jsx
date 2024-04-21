@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import assets from "../assets/asset";
 import Pagination from "../components/Pagination";
 import RegularHeader from "../components/RegularHeader";
@@ -8,6 +9,11 @@ import SmallTitle from "../components/texts/SmallTitle";
 
 
 export default function Categories() {
+
+    const courseData = (image, title) => {
+        image: image
+        title: title
+    }
     return (
         <Fragment>
             <RegularHeader pageLink='/categories'
@@ -100,50 +106,55 @@ export default function Categories() {
                             </div>
                         </div>
 
-                        {/* Contents */}
+                        {/* Cources / Bunles */}
 
                         <div className="mt-12 grid grid-cols-3 gap-x-6 gap-y-12 ">
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard><CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
-                            <CourseCard img={assets.course1}
-                                title="BCS Exam Prep Model Test Bundle -2023"
-                                price="199">
-                            </CourseCard>
+                            <Link to={{ pathname: '/course-details', state: courseData }} >
+                                <CourseCard img={assets.course1}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
+
+                            <Link to='/course-details'>
+                                <CourseCard img={assets.course2}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
+
+                            <Link to='/course-details'>
+                                <CourseCard img={assets.course3}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
+                            <Link to='/course-details'>
+                                <CourseCard img={assets.course4}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
+
+                            <Link to='/course-details'>
+                                <CourseCard img={assets.course5}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
+
+                            <Link to='/course-details'>
+                                <CourseCard img={assets.course6}
+                                    title="BCS Exam Prep Model Test Bundle -2023"
+                                    price="199">
+                                </CourseCard>
+                            </Link>
                         </div>
 
                     </div>
                 </div>
                 <Pagination></Pagination>
             </section>
-        </Fragment>
+        </Fragment >
     )
 }

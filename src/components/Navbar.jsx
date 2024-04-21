@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import assets from "../assets/asset";
 import GreenButton from "./buttons/GreenButton";
 import WhiteButton from "./buttons/WhiteButton";
@@ -41,13 +42,17 @@ export default function Navbar() {
               <ul className="flex justify-start items-center font-lato  lg:flex-row list-none lg:ml-auto gap-4 ps-4 ">
                 <li className="nav-item">
                   <a href="#">
-                    <Title >Home</Title>
+                    <Title >
+                      <Link to='/'>Home</Link>
+                    </Title>
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="#">
                     <div className="category flex items-center gap-0">
-                      <Title >Categories</Title>
+                      <Title >
+                        <Link to='/categories'>Categories</Link>
+                      </Title>
                       <span className=" ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
