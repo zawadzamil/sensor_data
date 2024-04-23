@@ -2,7 +2,6 @@
 import React, { Fragment } from "react";
 import Category from "../components/Catrgory";
 import ModelTest from "../components/ModelTest";
-import WhiteButton from "../components/buttons/WhiteButton";
 import BecomeExaminer from "../components/home/BecomeExaminer";
 import Features from "../components/home/Features";
 import Hero from "../components/home/Hero";
@@ -21,10 +20,9 @@ export default function Home() {
         details=""
         btn="">
       </ModelTest>
-      <Category top={`pt-[6rem]`}
+      <Category
         subtitle={<Subtitle>Top Categories</Subtitle>}
         title={<Title>Top Categories</Title>}
-        btn={<WhiteButton>Explore All</WhiteButton>}
       >
       </Category>
 

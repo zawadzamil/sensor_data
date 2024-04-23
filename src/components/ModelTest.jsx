@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import assets from "../assets/asset";
 import WhiteButton from "./buttons/WhiteButton";
 import CourseCard from "./cards/CourseCard";
@@ -17,7 +18,7 @@ export default function ModelTest(props) {
             <Title>{props.title}</Title>
           </div>
           <div className="button ">
-            {props.btn != "" || null ? <WhiteButton>{props.btn}</WhiteButton> : null}
+            {props.btn != "" || null ? <Link to="/categories"><WhiteButton>{props.btn}</WhiteButton> </Link> : null}
           </div>
         </div>
         <div className="details mt-4">
@@ -33,37 +34,53 @@ export default function ModelTest(props) {
 
         {/* Cource Card */}
         <div className="course-card mt-12  grid grid-cols-3 gap-x-6  gap-y-16">
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course1}>
-          </CourseCard>
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course2}>
-          </CourseCard>
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course3}>
-          </CourseCard>
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course4}>
-          </CourseCard>
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course5}>
-          </CourseCard>
-          <CourseCard
-            title='All In One - 2023 BCS Preparation Model test Bundle set.'
-            price='199.00'
-            img={assets.course6}>
-          </CourseCard>
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course1}>
+            </CourseCard>
+          </Link>
 
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course2}>
+            </CourseCard>
+          </Link>
+
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course3}>
+            </CourseCard>
+          </Link>
+
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course4}>
+            </CourseCard>
+          </Link>
+
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course5}>
+            </CourseCard>
+          </Link>
+
+          <Link to="/course-details">
+            <CourseCard
+              title='All In One - 2023 BCS Preparation Model test Bundle set.'
+              price='199.00'
+              img={assets.course6}>
+            </CourseCard>
+          </Link>
 
         </div>
       </section>

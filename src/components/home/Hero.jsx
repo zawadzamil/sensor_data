@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import assets from "../../assets/asset";
 import GreenButton from "../buttons/GreenButton";
 import WhiteButton from "../buttons/WhiteButton";
@@ -27,8 +28,13 @@ export default function Hero() {
         </div>
         {/* Button Section */}
         <div className="buttons mt-16 flex justify-center items-center gap-4">
-          <GreenButton >View Model Tests</GreenButton>
-          <WhiteButton  >Explore Categories</WhiteButton>
+          <Link to='/categories'>
+            <GreenButton >View Model Tests</GreenButton>
+          </Link>
+
+          <Link to='/categories'>
+            <WhiteButton  >Explore Categories</WhiteButton>
+          </Link>
         </div>
 
         {/* Cloud Section */}

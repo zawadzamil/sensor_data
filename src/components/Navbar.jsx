@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="container px-4 mx-auto flex  items-center justify-between ">
           <div className="flex">
             <div className="w-full relative flex lg:w-auto lg:static lg:block lg:justify-start">
-              <a href="#pablo">
+              <Link to="/">
                 <span className="text-title_green text-[24px] font-lato leading-[32px] font-[800] ">
                   Model
                 </span>
@@ -23,7 +23,7 @@ export default function Navbar() {
                 <span className="text-zinc-800 text-base font-semibold font-lato leading-normal tracking-wide">
                   .com
                 </span>
-              </a>
+              </Link>
               <button
                 className="text-dark cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
@@ -42,17 +42,22 @@ export default function Navbar() {
               <ul className="flex justify-start items-center font-lato  lg:flex-row list-none lg:ml-auto gap-4 ps-4 ">
                 <li className="nav-item">
                   <a href="#">
-                    <Title >
-                      <Link to='/'>Home</Link>
-                    </Title>
+                    <Link to='/'>
+                      <Title >
+                        Home
+                      </Title>
+                    </Link>
+
                   </a>
                 </li>
                 <li className="nav-item">
                   <a href="#">
                     <div className="category flex items-center gap-0">
-                      <Title >
-                        <Link to='/categories'>Categories</Link>
-                      </Title>
+                      <Link to='/categories'>
+                        <Title >
+                          Categories
+                        </Title>
+                      </Link>
                       <span className=" ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -104,11 +109,13 @@ export default function Navbar() {
 
                 <li>
                   <div className="userInfo flex items-center gap-[24px]">
-                    <img
-                      src={assets.cartIcon}
-                      alt=""
-                      className="relative flex w-[24px] h-[24px] nav-item "
-                    />
+                    <Link to="/checkout">
+                      <img
+                        src={assets.cartIcon}
+                        alt=""
+                        className="relative flex w-[24px] h-[24px] nav-item "
+                      />
+                    </Link>
                     <a href="#" className="nav-item">
                       <GreenButton  >Login</GreenButton>
                     </a>
