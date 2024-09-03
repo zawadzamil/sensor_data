@@ -43,6 +43,7 @@ const Home = () => {
         details=""
         tabHeader={['BCS', 'Bank jobs', 'Admission Exam']}
         isExplore={true}
+        allowTab={false}
       />
     </div>
   );
