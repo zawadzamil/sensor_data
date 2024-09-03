@@ -1,0 +1,23 @@
+.panel {
+    @apply bg-white dark:bg-secondary-dark border rounded shadow-sm;
+}
+
+.panel-title {
+    @apply text-lg font-semibold text-secondary-dark dark:text-primary-light mb-2;
+}
+
+.panel-content {
+    @apply text-neutral dark:text-neutral-dark;
+}
+
+.panel-warning {
+    @apply bg-warning-light dark:bg-warning border-warning dark:border-warning-light text-warning dark:text-warning-light;
+}
+
+.page-container {
+    @apply w-[80%] mx-auto max-w-7xl sm:w-[85%] lg:w-[90%];
+}
+
+.card {
+    @apply bg-white dark:bg-secondary-dark rounded-lg shadow-lg ;
+}

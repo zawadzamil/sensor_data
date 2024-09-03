@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon>.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  /* background-color: #333; */
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.menu-icon.toggle>.bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.menu-icon.toggle>.bar2 {
+  opacity: 0;
+}
+
+.menu-icon.toggle>.bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* .page-container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1280px;
+} */
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-prev-btn,
+.custom-next-btn {
+  /* Add your custom styles here */
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Adjust styles as needed */
+}
+
+.conatainer {
+  margin: 20px 0;
+}
+
+.swiper-slide.swiper-slide-active,
+.swiper-slide.swiper-slide-next,
+.swiper-slide.swiper-slide-prev {
+  background: inherit;
+  width: 100%;
+}
+
+.swiper-slide {
+  background: inherit;
+}
+
+.hero {
+  background: linear-gradient(358deg,
+      #bdf4e0 23.27%,
+      rgba(220, 242, 234, 0) 79.38%);
+}
+
+.custom-shape-divider-top-1703852338 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1703852338 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 40px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1703852338 .shape-fill {
+  fill: #b42222;
+}
+
+/* For screen size 1980 and above */
+.myContainer {
+  padding-left: 25rem;
+  padding-right: 25rem;
+}
+
+.join-item {
+  font-size: 0.75rem;
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+}
+
+.small_semibold {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.small_normal {
+  font-family: Lato;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.large_bold {
+  font-family: Lato;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.extra_large_bold {
+  font-family: Lato;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.semi_lerge_bold {
+  font-family: Lato;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.base_bold {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.base_semibold {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.base_normal {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.base_thin {
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+
+}
+
+.underline_gray {
+  height: 1px;
+  align-self: stretch;
+  flex-grow: 0;
+  background-color: #d8dae5;
+}
+
+.logo_in_btn {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.login-section {
+  width: 22rem;
+  margin: auto;
+}
+
+/* For screen size 1500 to 1979 */
+@media screen and (max-width: 1979px) and (min-width: 1500px) {
+  .myContainer {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+}
+
+/* For screen size 1280 to 1499 */
+@media screen and (max-width: 1499px) and (min-width: 1280px) {
+  .myContainer {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
