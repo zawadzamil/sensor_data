@@ -1,3 +1,4 @@
+import Img from "@/components/shared/Img";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import assets from "../assets/asset";
@@ -8,7 +9,7 @@ import RegularHeader from "../ui/RegularHeader";
 import CourseCard from "../ui/cards/CourseCard";
 
 
-export default function PATH_CATEGORIES() {
+export default function Categories() {
 
     const courseData = (image, title) => {
         image: image;
@@ -27,7 +28,7 @@ export default function PATH_CATEGORIES() {
                             {/* Search Box */}
                             <div className="relative ">
                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                                    <img src={assets.SearchIconSVG} alt="" className=" object-cover" />
+                                    <Img src={assets.SearchIconSVG} alt="" className=" object-cover" />
                                 </span>
                                 <input type="text" placeholder="Search Bundles..." className="input input-bordered input-sm w-full max-w-xs pl-10 py-5" />
                             </div>
