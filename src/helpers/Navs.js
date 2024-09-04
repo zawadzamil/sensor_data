@@ -1,4 +1,4 @@
-import { PATH_HOME ,PATH_CATEGORIES_PATH,PATH_BECOME_AN_EXAMINER} from "@/helpers/Slugs";
+import { PATH_BECOME_AN_EXAMINER, PATH_CATEGORIES, PATH_HOME } from "@/helpers/Slugs";
 
 export const MAIN_NAVS = [
     {
@@ -7,7 +7,7 @@ export const MAIN_NAVS = [
         displayName: "Home"
     },
     {
-        path: PATH_CATEGORIES_PATH,
+        path: PATH_CATEGORIES,
         title: "categories",
         displayName: "Categories"
     },

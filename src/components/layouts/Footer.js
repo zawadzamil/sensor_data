@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
 import { PATH_HOME } from '@/helpers/Slugs';
+import { Fragment } from 'react';
 import { Button } from '../shared/button';
-import { Typography } from '../shared/typography';
 import { Input } from '../shared/input';
+import { Typography } from '../shared/typography';
 
 export default function Footer() {
   return (
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="about flex flex-col gap-5">
             <Typography.Text>About</Typography.Text>
             <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
-              PATH_CATEGORIES_PATH
+              PATH_CATEGORIES
             </span>
             <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
               Model Tests
@@ -106,7 +106,7 @@ export default function Footer() {
           <div className="items flex gap-10">
             <span className="font-lato leading-6 text-white text-[1rem] font-normal">About Us</span>
             <span className="font-lato leading-6 text-white text-[1rem] font-normal">
-              PATH_CATEGORIES_PATH
+              PATH_CATEGORIES
             </span>
             <span className="font-lato leading-6 text-white text-[1rem] font-normal">
               Privacy policy

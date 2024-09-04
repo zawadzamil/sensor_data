@@ -1,60 +1,43 @@
 /* eslint-disable react/prop-types */
+import { PATH_CATEGORIES } from "@/helpers/Slugs";
+import { categoryData } from "@/helpers/StaticData";
+import Link from "next/link";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import assets from "../assets/asset";
-import WhiteButton from "./buttons/WhiteButton";
+import { Button } from "../shared/button";
+import { Tags } from "../shared/tags";
+import { Typography } from "../shared/typography";
 import CategoryCard from "./cards/CategoryCard";
 
 
-export default function Catrgory(props) {
+export default function Category() {
     return (
         <Fragment>
-            <section className="relative mt-24">
+            <section className="relative mt-24 bg-success-light">
 
                 <div className={`myContainer bg-natural_bg_green pt-[4rem]`}>
-                    <div className="top flex justify-between align-middle pt-[2rem] ">
+                    <div className="top flex justify-between items-center pt-[2rem] ">
                         <div className="text-area flex flex-col">
-                            {props.subtitle}
-                            {props.title}
+                            <Tags.Primary
+                                presets="white"
+                                className="pl-0 font-normal bg-transparent"
+                                text="Top Categories"
+                            />
+                            <Typography.SubHeading>Top Categories</Typography.SubHeading>
                         </div>
-                        <Link to='/PATH_CATEGORIES_PATH'>
-                            <WhiteButton>  Explore All</WhiteButton>
+                        <Link href={PATH_CATEGORIES}>
+                            <Button.Outline>  Explore All</Button.Outline>
                         </Link>
 
                     </div>
 
-                    <div className="PATH_CATEGORIES_PATH pt-[2.25rem] grid grid-cols-4 gap-6 pb-[7.81rem]">
-                        <CategoryCard
-                            image={assets.palette}
-                            title="Arts and Design"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.fileCode}
-                            title="Development"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.presentation}
-                            title="Marketing"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.cpu}
-                            title="Machine Learning"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.desktop}
-                            title="Computer Science"
-                        ></CategoryCard> <CategoryCard
-                            image={assets.film}
-                            title="Video Editing"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.calculator}
-                            title="Mathamatics"
-                        ></CategoryCard>
-                        <CategoryCard
-                            image={assets.atom}
-                            title="Science"
-                        ></CategoryCard>
+                    <div className="category pt-[2.25rem] grid grid-cols-4 gap-6 pb-[7.81rem]">
+                        {categoryData.map((data, index) =>
+                            <CategoryCard
+                                key={index}
+                                icon={data.icon}
+                                title={data.title}
+                            />)}
+
                     </div>
                 </div>
                 <div className="custom-shape-divider-top-1703851278 absolute w-full h-full top-0 -z-50">
@@ -66,5 +49,5 @@ export default function Catrgory(props) {
 
 
         </Fragment>
-    )
+    );
 }

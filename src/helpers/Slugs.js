@@ -1,5 +1,5 @@
 export const PATH_HOME = '/';
-export const PATH_CATEGORIES_PATH = '/categories';
+export const PATH_CATEGORIES = '/categories';
 export const PATH_MY_TESTS = '/my-tests';
 export const PATH_DETAILS = '/details';
 

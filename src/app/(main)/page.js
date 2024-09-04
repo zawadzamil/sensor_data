@@ -1,13 +1,7 @@
-import BannerSection from '@/components/home-sections/BannerSection';
-import ServiceIconSection from '@/components/home-sections/ServiceIconSection';
-import AboutSection from '@/components/home-sections/AboutSection';
-import Head from 'next/head';
-import { Button } from '@/components/shared/button';
-import { Typography } from '@/components/shared/typography';
-import UpcommingMovieSection from '@/components/home-sections/UpcommingMovieSection';
-import Hero from '@/components/pages/home/Hero';
-import Features from '@/components/pages/home/Features';
 import BecomeExaminer from '@/components/pages/home/BecomeExaminer';
+import Features from '@/components/pages/home/Features';
+import Hero from '@/components/pages/home/Hero';
+import Category from '@/components/ui/Catrgory';
 import CompactBundler from '@/components/ui/sections/CompactBundler';
 
 // export const metadata = {
@@ -36,15 +30,26 @@ const Home = () => {
     <div>
       <Hero />
       <Features />
-      <BecomeExaminer />
       <CompactBundler
         badge="Popular course"
         title="Give exam on the Trending Model-Tests."
         details=""
         tabHeader={['BCS', 'Bank jobs', 'Admission Exam']}
+        isExplore={false}
+        allowTab={true}
+      />
+      <Category />
+
+      <CompactBundler
+        badge="100% Free"
+        title="Get Bank job-ready for an in-demand career"
+        details="Gain the skills and confidence needed to stand out in the competitive job market and embark on a successful journey toward an in-demand banking career."
+        tabHeader={['BCS', 'Bank jobs', 'Admission Exam']}
         isExplore={true}
         allowTab={false}
       />
+      <BecomeExaminer />
+
     </div>
   );
 };
