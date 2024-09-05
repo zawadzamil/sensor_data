@@ -57,6 +57,10 @@ module.exports = {
           light: '#FFEFD2',
           'extra-lite': '#FFEFD2',
         },
+        blue: {
+          DEFAULT: '#0E2341',
+          light: '#0E2341',
+        },
       },
       fontWeight: {
         normal: '400',
