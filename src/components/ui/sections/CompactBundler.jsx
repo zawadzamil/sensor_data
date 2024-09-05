@@ -1,5 +1,5 @@
-import { Button } from '@/components/shared/button';
 import { Tabs } from '@/components/shared/Tabs';
+import { Button } from '@/components/shared/button';
 import { Tags } from '@/components/shared/tags';
 import { Typography } from '@/components/shared/typography';
 import { Fragment } from 'react';
@@ -28,7 +28,7 @@ const CompactBundler = ({
         </div>
       </div>
       <div className="details mt-4">
-        <Typography.Text className="w-full text-neutral-light">
+        <Typography.Text className="w-full text-neutral-light text-md">
           {details}
         </Typography.Text>
       </div>

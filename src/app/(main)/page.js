@@ -50,6 +50,15 @@ const Home = () => {
       />
       <BecomeExaminer />
 
+      <CompactBundler
+        badge="Top Rated Tests"
+        title="Explore Top Model Test Exams"
+        details="Dive into our curated selection of top-tier model tests, meticulously designed to elevate your preparation."
+        tabHeader={['All', 'Admission', 'BCS', 'Bank jobs', 'University']}
+        isExplore={true}
+        allowTab={true}
+      />
+
     </div>
   );
 };

@@ -60,6 +60,7 @@ module.exports = {
         blue: {
           DEFAULT: '#0E2341',
           light: '#0E2341',
+          dark:'#101840'
         },
       },
       fontWeight: {
