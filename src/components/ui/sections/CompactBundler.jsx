@@ -1,7 +1,10 @@
+'use client';
 import { Tabs } from '@/components/shared/Tabs';
 import { Button } from '@/components/shared/button';
 import { Tags } from '@/components/shared/tags';
 import { Typography } from '@/components/shared/typography';
+import { PATH_DETAILS } from '@/helpers/Slugs';
+import { useRouter } from 'next/navigation';
 import { Fragment } from 'react';
 import assets from '../../../assets/asset';
 import CourseCard from '../cards/CourseCard';
@@ -14,6 +17,7 @@ const CompactBundler = ({
   tabHeader = [],
   allowTab = true,
 }) => {
+  const router = useRouter();
   return (
     <div className="page-container my-20">
       <div className="">
@@ -45,6 +49,10 @@ const CompactBundler = ({
                     {[...Array(6)].map((_, index) => (
                       <Fragment key={index}>
                         <CourseCard
+                          onClick={() =>
+                            router.push(`${PATH_DETAILS}/${index}`)
+                          }
+                          className="cursor-pointer"
                           title="All In One - 2023 BCS Preparation Model test Bundle set."
                           price="199.00"
                           img={assets.course2}
