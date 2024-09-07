@@ -27,6 +27,7 @@ const Details = () => {
           <Tabs.Primary
             items={DetailsTab}
             tabBarClassName="mt-4 bg-neutral-extra-lite w-fit"
+            
           />
         </div>
       </div>

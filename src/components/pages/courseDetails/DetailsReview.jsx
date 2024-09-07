@@ -29,7 +29,7 @@ const DetailsReview = () => {
   ).toFixed(1);
 
   return (
-    <div className="mx-auto p-4 border rounded mt-5">
+    <div className="mx-auto p-4 border rounded mt-10">
       <h2 className="text-2xl font-bold mb-4">Student Ratings & Review</h2>
       <p className="text-sm text-gray-500 mb-4">Ratings & reviews are verified.</p>
 

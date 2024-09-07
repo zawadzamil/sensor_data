@@ -12,7 +12,7 @@ const PrimaryDetails = ({ className }) => {
       <Tags.Primary
         text="BCS"
         presets="green"
-        className=" bg-success-light font-semibold"
+        className=" bg-success-light font-semibold px-3 py-1 text-sm"
       />
       <div className="mt-4">
         <Typography.SubHeading className="font-bold text-secondary-dark">

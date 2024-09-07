@@ -19,7 +19,7 @@ const renderTabBar = (
   });
   return (
     <div className={twMerge('', tabBarClassName)}>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         {modifiedPaned?.map((item) => (
           <button
             key={item?.tabKey}

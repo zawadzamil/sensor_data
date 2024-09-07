@@ -116,8 +116,8 @@ const CourseOverview = () => {
   ];
 
   return (
-    <div>
-      <Typography.SubHeading className="text-xl text-neutral-light font-bold">
+    <div className='mb-24'>
+      <Typography.SubHeading className="text-xl text-neutral-light font-bold mt-10">
         Overview
       </Typography.SubHeading>
       <Typography.Text className="text-sm text-neutral-light">
@@ -134,7 +134,7 @@ const CourseOverview = () => {
 
       <Accordion.Primary items={insideBundles} />
 
-      <Typography.SubHeading className="text-xl text-neutral-light font-bold">
+      <Typography.SubHeading className="text-xl text-neutral-light font-bold mt-16 mb-6">
         Bundle Content
       </Typography.SubHeading>
       <Accordion.Outline items={bundleContent} />
