@@ -1,11 +1,10 @@
-import { Button } from '@/components/shared/button';
 import { Tabs } from '@/components/shared/Tabs';
-import { Typography } from '@/components/shared/typography';
-import Link from 'next/link';
-import React, { Fragment } from 'react';
-import CourseCard from '../cards/CourseCard';
-import assets from '../../../assets/asset';
+import { Button } from '@/components/shared/button';
 import { Tags } from '@/components/shared/tags';
+import { Typography } from '@/components/shared/typography';
+import { Fragment } from 'react';
+import assets from '../../../assets/asset';
+import CourseCard from '../cards/CourseCard';
 
 const CompactBundler = ({
   badge,
@@ -16,7 +15,7 @@ const CompactBundler = ({
   allowTab = true,
 }) => {
   return (
-    <div className="page-container my-10">
+    <div className="page-container my-20">
       <div className="">
         <Tags.Primary
           presets="white"
@@ -29,7 +28,7 @@ const CompactBundler = ({
         </div>
       </div>
       <div className="details mt-4">
-        <Typography.Text className="w-full text-neutral-light">
+        <Typography.Text className="w-full text-neutral-light text-md">
           {details}
         </Typography.Text>
       </div>

@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="container px-4 mx-auto flex  items-center justify-between ">
           <div className="flex">
             <div className="w-full relative flex lg:w-auto lg:static lg:block lg:justify-start">
-              
+
               <button
                 className="text-dark cursor-pointer text-2xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                 type="button"
@@ -43,9 +43,9 @@ export default function Navbar() {
                 <li className="nav-item">
                   <a href="#">
                     <div className="category flex items-center gap-0">
-                      <Link to='/PATH_CATEGORIES_PATH'>
+                      <Link to='/PATH_CATEGORIES'>
                         <Title >
-                          PATH_CATEGORIES_PATH
+                          PATH_CATEGORIES
                         </Title>
                       </Link>
                       <span className=" ">

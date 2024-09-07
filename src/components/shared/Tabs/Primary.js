@@ -25,7 +25,9 @@ const renderTabBar = (
             key={item?.tabKey}
             onClick={(e) => onTabClick(item.tabKey, e)}
             className={`${
-              activeKey === item.tabKey ? 'bg-primary text-white !outline-none ' : ''
+              activeKey === item.tabKey
+                ? 'bg-primary text-white !outline-none '
+                : ''
             } w-[216px] block py-3 px-6 hover:bg-primary hover:text-white`}
           >
             {item.tab}
@@ -36,11 +38,18 @@ const renderTabBar = (
   );
 };
 
-const Primary = ({ items, tabBarClassName, tabBarUnderLine, ...props }) => {
+const Primary = ({
+  items = [],
+  defaultActiveKey = 0,
+  tabBarClassName,
+  tabBarUnderLine,
+  ...props
+}) => {
   return (
     <Tabs
       {...props}
       items={items}
+      defaultActiveKey={defaultActiveKey}
       renderTabBar={(props, DefaultTabBar) =>
         renderTabBar(props, DefaultTabBar, { tabBarClassName, tabBarUnderLine })
       }
@@ -57,11 +66,6 @@ Primary.propTypes = {
       children: PropTypes.node.isRequired,
     }),
   ).isRequired,
-};
-
-Primary.defaultProps = {
-  defaultActiveKey: 0,
-  items: [],
 };
 
 export default Primary;

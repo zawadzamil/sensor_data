@@ -2,11 +2,11 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import assets from "../assets/asset";
-import WhiteButton from "./buttons/WhiteButton";
-import CourseCard from "./cards/CourseCard";
 import Filter from "../shared/typography/Filter";
 import Subtitle from "../shared/typography/SubHeading";
 import Title from "../shared/typography/Title";
+import WhiteButton from "./buttons/WhiteButton";
+import CourseCard from "./cards/CourseCard";
 
 export default function ModelTest(props) {
   return (
@@ -18,7 +18,7 @@ export default function ModelTest(props) {
             <Title>{props.title}</Title>
           </div>
           <div className="button ">
-            {props.btn != "" || null ? <Link to="/PATH_CATEGORIES_PATH"><WhiteButton>{props.btn}</WhiteButton> </Link> : null}
+            {props.btn != "" || null ? <Link to="/PATH_CATEGORIES"><WhiteButton>{props.btn}</WhiteButton> </Link> : null}
           </div>
         </div>
         <div className="details mt-4">

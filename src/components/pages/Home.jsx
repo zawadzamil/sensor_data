@@ -1,12 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import Category from "../ui/Catrgory";
 import ModelTest from "../ui/ModelTest";
 import BecomeExaminer from "./home/BecomeExaminer";
 import Features from "./home/Features";
 import Hero from "./home/Hero";
-import Subtitle from "../shared/typography/SubHeading";
-import Title from "../shared/typography/Title";
 
 export default function Home() {
   return (
@@ -20,11 +18,7 @@ export default function Home() {
         details=""
         btn="">
       </ModelTest>
-      <Category
-        subtitle={<Subtitle>Top PATH_CATEGORIES_PATH</Subtitle>}
-        title={<Title>Top PATH_CATEGORIES_PATH</Title>}
-      >
-      </Category>
+      <Category />
 
       <ModelTest
         top={`pt-[5rem]`}

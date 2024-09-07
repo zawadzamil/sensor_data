@@ -1,9 +1,8 @@
-import { Fragment } from 'react';
-import Heading from '../../ui/headings/Heading';
 import { Button } from '@/components/shared/button';
-import Link from 'next/link';
-import { PATH_CATEGORIES_PATH } from '@/helpers/Slugs';
 import { Typography } from '@/components/shared/typography';
+import { PATH_CATEGORIES } from '@/helpers/Slugs';
+import Link from 'next/link';
+import { Fragment } from 'react';
 
 export default function Hero() {
   return (
@@ -24,10 +23,10 @@ export default function Hero() {
             </Typography.Text>
           </div>
           <div className="mt-16 flex justify-center items-center gap-4">
-            <Link href={PATH_CATEGORIES_PATH}>
+            <Link href={PATH_CATEGORIES}>
               <Button.Primary>View Model Tests</Button.Primary>
             </Link>
-            <Link href={PATH_CATEGORIES_PATH}>
+            <Link href={PATH_CATEGORIES}>
               <Button.Outline className="!bg-transparent">Explore categories</Button.Outline>
             </Link>
           </div>

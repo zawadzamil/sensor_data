@@ -1,24 +1,24 @@
-import { Fragment } from 'react';
 import { PATH_HOME } from '@/helpers/Slugs';
+import { Fragment } from 'react';
 import { Button } from '../shared/button';
-import { Typography } from '../shared/typography';
 import { Input } from '../shared/input';
+import { Typography } from '../shared/typography';
 
 export default function Footer() {
   return (
     <Fragment>
       <div className="myContainer pb-12">
         {/* Top Footer Section */}
-        <div className="top_footer flex justify-between p-9 shadow-md mt-4">
+        <div className="top_footer flex justify-between items-center p-9 shadow-md mt-4">
           <div className="logo">
             <a href={PATH_HOME}>
-              <span className="text-title_green text-[24px] font-lato leading-[32px] font-[800] ">
+              <span className="text-primary-dark text-3xl leading-[32px] font-[800] ">
                 Model
               </span>
-              <span className="text-slate-500 text-3xl font-extrabold font-lato leading-loose">
+              <span className="text-zinc-800 text-3xl font-extrabold  leading-loose">
                 Test
               </span>
-              <span className="text-zinc-800 text-base font-semibold font-lato leading-normal tracking-wide">
+              <span className="text-zinc-800 text-base font-semibold  leading-normal tracking-wide">
                 .com
               </span>
             </a>
@@ -39,86 +39,86 @@ export default function Footer() {
 
         <div className="bottomNavigation flex justify-between mt-12">
           <div className="about flex flex-col gap-5">
-            <Typography.Text>About</Typography.Text>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
-              PATH_CATEGORIES_PATH
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            <Typography.Text className="font-semibold text-secondary-dark">About</Typography.Text>
+            <Typography.Text className=" font-normal">
+              Categories
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Model Tests
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Careers
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">Jobs</span>
+            </Typography.Text>
+            <Typography.Text className=" font-normal">Jobs</Typography.Text>
           </div>
 
           <div className="about flex flex-col gap-5">
-            <Typography.Text>Support</Typography.Text>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+          <Typography.Text className="font-semibold text-secondary-dark">Support</Typography.Text>
+            <Typography.Text className=" font-normal">
               Contact Us
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Online Chat
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Whats App
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Facebook
-            </span>
+            </Typography.Text>
           </div>
 
           <div className="about flex flex-col gap-5">
-            <Typography.Text>Terms</Typography.Text>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+          <Typography.Text className="font-semibold text-secondary-dark">Terms</Typography.Text>
+            <Typography.Text className=" font-normal">
               Privacy Policy
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Cookies Settings
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Sitemap
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Accessibility Statement{' '}
-            </span>
+            </Typography.Text>
           </div>
 
           <div className="about flex flex-col gap-5">
-            <Typography.Text>FAQ</Typography.Text>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+          <Typography.Text className="font-semibold text-secondary-dark">FAQ</Typography.Text>
+            <Typography.Text className=" font-normal">
               Account
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Manage Deliveries
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Payments
-            </span>
-            <span className="font-lato leading-6 text-natural text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className=" font-normal">
               Returns{' '}
-            </span>
+            </Typography.Text>
           </div>
         </div>
       </div>
-      <div className="bottomFooter  bg-natural ">
+      <div className="bottomFooter  bg-blue-dark">
         <div className="content myContainer p-6 flex justify-between items-center">
           <div className="items flex gap-10">
-            <span className="font-lato leading-6 text-white text-[1rem] font-normal">About Us</span>
-            <span className="font-lato leading-6 text-white text-[1rem] font-normal">
-              PATH_CATEGORIES_PATH
-            </span>
-            <span className="font-lato leading-6 text-white text-[1rem] font-normal">
+            <Typography.Text className="text-white font-normal">About Us</Typography.Text>
+            <Typography.Text className="text-white font-normal">
+              Categories
+            </Typography.Text>
+            <Typography.Text className="text-white font-normal">
               Privacy policy
-            </span>
-            <span className="font-lato leading-6 text-white text-[1rem] font-normal">Sitemap</span>
-            <span className="font-lato leading-6 text-white text-[1rem] font-normal">
+            </Typography.Text>
+            <Typography.Text className="text-white font-normal">Sitemap</Typography.Text>
+            <Typography.Text className="text-white font-normal">
               Terms of Use
-            </span>
+            </Typography.Text>
           </div>
           <div className="signature">
-            <div className="text-white text-sm font-normal font-lato leading-tight tracking-wide">
-              © 2023, All Rights Reserved
+            <div className="">
+              <Typography.Text className="text-white">© 2023, All Rights Reserved</Typography.Text>
             </div>
           </div>
         </div>

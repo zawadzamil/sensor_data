@@ -1,7 +1,6 @@
 'use client';
-import React, { Fragment, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { Tabs } from 'antd';
+import PropTypes from 'prop-types';
 import { twMerge } from 'tailwind-merge';
 
 const renderTabBar = (
@@ -26,7 +25,7 @@ const renderTabBar = (
             onClick={(e) => onTabClick(item.tabKey, e)}
             className={`${
               activeKey === item.tabKey ? 'bg-primary-light text-success !outline-none ' : ''
-            } -mb-[1px] block rounded p-3.5 py-2 hover:bg-primary-light hover:text-success`}
+            } -mb-[1px] block rounded p-3.5 py-2 hover:bg-primary-light hover:text-success text-base` }
           >
             {item.tab}
           </button>
@@ -36,7 +35,7 @@ const renderTabBar = (
   );
 };
 
-const Outline = ({ items, defaultActiveKey, tabBarClassName, tabBarUnderLine, ...props }) => {
+const Outline = ({ items=[], defaultActiveKey=0, tabBarClassName, tabBarUnderLine, ...props }) => {
   return (
     <Tabs
       {...props}
@@ -58,11 +57,6 @@ Outline.propTypes = {
       children: PropTypes.node.isRequired,
     }),
   ).isRequired,
-};
-
-Outline.defaultProps = {
-  defaultActiveKey: 0,
-  items: [],
 };
 
 export default Outline;

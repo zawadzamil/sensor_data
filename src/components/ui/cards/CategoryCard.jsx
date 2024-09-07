@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
 
-import Subtitle from "../../shared/typography/SubHeading";
+import { Typography } from "@/components/shared/typography";
 
 
-export default function CategoryCard(props) {
+
+export default function CategoryCard({ icon, title }) {
+
+
     return (
         <Fragment>
             <div className="w-[16rem] h-[16rem] py-4 px-2 flex flex-col items-center  justify-center gap-6 bg-white rounded-lg shadow-md">
-                <img src={props.image} className="w-24 h-24 shrink-0"></img>
-                <Subtitle>{props.title}</Subtitle>
+                {icon}
+                <Typography.Text>{title}</Typography.Text>
             </div>
         </Fragment>
-    )
+    );
 }

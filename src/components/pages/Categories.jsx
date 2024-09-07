@@ -1,24 +1,25 @@
+import Img from "@/components/shared/Img";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import assets from "../assets/asset";
+import Semibold from "../shared/typography/Semibold";
+import SmallTitle from "../shared/typography/SmallTitle";
 import Pagination from "../ui/Pagination";
 import RegularHeader from "../ui/RegularHeader";
 import CourseCard from "../ui/cards/CourseCard";
-import Semibold from "../shared/typography/Semibold";
-import SmallTitle from "../shared/typography/SmallTitle";
 
 
-export default function PATH_CATEGORIES_PATH() {
+export default function Categories() {
 
     const courseData = (image, title) => {
-        image: image
-        title: title
-    }
+        image: image;
+        title: title;
+    };
     return (
         <Fragment>
-            <RegularHeader pageLink='/PATH_CATEGORIES_PATH'
-                page='PATH_CATEGORIES_PATH'
-                title='Bundle PATH_CATEGORIES_PATH'
+            <RegularHeader pageLink='/PATH_CATEGORIES'
+                page='PATH_CATEGORIES'
+                title='Bundle PATH_CATEGORIES'
             ></RegularHeader>
             <section className="body mt-20 myContainer ">
                 <div className="grid grid-cols-4 gap-8 mb-12">
@@ -27,7 +28,7 @@ export default function PATH_CATEGORIES_PATH() {
                             {/* Search Box */}
                             <div className="relative ">
                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                                    <img src={assets.SearchIconSVG} alt="" className=" object-cover" />
+                                    <Img src={assets.SearchIconSVG} alt="" className=" object-cover" />
                                 </span>
                                 <input type="text" placeholder="Search Bundles..." className="input input-bordered input-sm w-full max-w-xs pl-10 py-5" />
                             </div>
@@ -35,7 +36,7 @@ export default function PATH_CATEGORIES_PATH() {
                             {/* Filter */}
                             <div className="filters">
                                 <div className="title p-4 shadow ">
-                                    <SmallTitle rest={'text-base'}>PATH_CATEGORIES_PATH</SmallTitle>
+                                    <SmallTitle rest={'text-base'}>PATH_CATEGORIES</SmallTitle>
                                 </div>
                                 <div className="filter">
                                     <div className="name p-4">
@@ -156,5 +157,5 @@ export default function PATH_CATEGORIES_PATH() {
                 <Pagination></Pagination>
             </section>
         </Fragment >
-    )
+    );
 }
