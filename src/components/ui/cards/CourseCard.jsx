@@ -11,7 +11,7 @@ import Img from '@/components/shared/Img';
 import { Icons } from '@/assets/icons';
 
 export default function CourseCard(props) {
-  console.log('====Image', props.img);
+  
   return (
     <Fragment>
       <div className="card p-5">

@@ -1,12 +1,9 @@
-
 import moment from 'moment';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Permission from './Permission';
+import { PATH_HOME } from './Slugs';
+
 // import { createIntl, createIntlCache } from 'react-intl';
-
-
-
-
 
 export const onValidateForm = async (form) => {
   try {
@@ -25,11 +22,9 @@ export const getErrorMessage = (error) => {
   }
 };
 
-
 export const getLocalDate = (date, formate = 'MMMM Do YYYY, h:mm a') => {
   return moment(date).format(formate);
 };
-
 
 export const useQuery = () => {
   return useSearchParams();
@@ -75,8 +70,6 @@ export const getQueryParams = (query, filterItems) => {
   _data = getParams(query, _data);
   return _data;
 };
-
-
 
 export const getBase64Image = (data) => {
   const base64 = btoa(
@@ -132,7 +125,6 @@ export const getAllNonObjectValues = (data) => {
   return singleValue;
 };
 
-
 export const hasPermission = (loggedInUserPermissions, permissions) => {
   if (!permissions) {
     return false;
@@ -174,9 +166,9 @@ export const hasPermission = (loggedInUserPermissions, permissions) => {
 //     .replace('BDT', CURRENCY);
 // }
 
-
 export const isEmptyObject = (obj) => {
   if (obj === undefined || obj === null) return true;
   return Object.keys(obj).length === 0;
 };
+
 
