@@ -64,6 +64,7 @@ module.exports = {
         },
         gray: {
           light: '#F4F6FA',
+          moderate: '#D8DAE5',
         }
       },
       fontWeight: {
