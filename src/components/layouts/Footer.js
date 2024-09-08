@@ -7,7 +7,7 @@ import { Typography } from '../shared/typography';
 export default function Footer() {
   return (
     <Fragment>
-      <div className="myContainer pb-12">
+      <div className="page-container pb-12">
         {/* Top Footer Section */}
         <div className="top_footer flex justify-between items-center p-9 shadow-md mt-4">
           <div className="logo">
