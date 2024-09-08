@@ -3,12 +3,12 @@
 const useFormItems = () => {
   const formItems = [
     {
-      label: 'Phone number',
-      name: 'phone',
+      label: 'Email',
+      name: 'email',
       type: 'input',
       className: 'col-span-12',
-      placeholder: 'Enter user phone',
-      rules: [{ required: true, message: 'Please input your phone number!' }],
+      placeholder: 'Enter user email',
+      rules: [{ required: true, message: 'Please input your email!' }],
     },
   ];
   return formItems;

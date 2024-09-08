@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa");
+const withPWA = require('next-pwa');
 
 const nextConfig = withPWA({
   dest: 'public',
@@ -10,12 +10,12 @@ const nextConfig = withPWA({
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"]
+      use: ['@svgr/webpack'],
     });
     return config;
   },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'http://192.168.0.109:8070', '*'],
   },
   // Uncomment the following if you need to enable experimental features
   // experimental: {

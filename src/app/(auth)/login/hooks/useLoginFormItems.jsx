@@ -3,8 +3,8 @@
 const useLoginFormItems = () => {
   const formItems = [ 
     {
-      label: 'Phone number',
-      name: 'phone',
+      label: 'Email',
+      name: 'username',
       type: 'input',
       className: 'col-span-12',
       placeholder: 'Enter user phone',

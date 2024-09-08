@@ -6,11 +6,14 @@ import useFormItems from './hooks/useResetPassFormItems';
 import { Button } from '@/components/shared/button';
 import Link from 'next/link';
 import { Icons } from '@/assets/icons';
-import { PATH_LOGIN } from '@/helpers/Slugs';
+import { PATH_LOGIN, PATH_OTP_VERIFY } from '@/helpers/Slugs';
 import api from '@/providers/Api';
 import { USER_FORGOT_PASSWORD_API_URL } from '@/helpers/apiUrl';
+import { Toast } from '@/components/shared/toast/Toast';
+import { useRouter } from 'next/navigation';
 
 const ForgotPassword = () => {
+  const router = useRouter();
   const formItems = useFormItems();
   const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (form) => {
@@ -20,11 +23,14 @@ const ForgotPassword = () => {
 
       api.post(
         {
-          url: USER_FORGOT_PASSWORD_API_URL,
-          body: value,
+          url: `${USER_FORGOT_PASSWORD_API_URL}?email=${value?.email}`,
+          body: {},
           setLoading: setIsLoading,
         },
-        (res) => {},
+        (res) => {
+          router.push(`${PATH_OTP_VERIFY}?email=${value?.email}`);
+          Toast('success', 'Successfully sent OTP in you email', '');
+        },
       );
     } catch (error) {
       console.log('Form validation failed:', error);

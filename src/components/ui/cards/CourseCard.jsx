@@ -10,29 +10,41 @@ import { Tags } from '@/components/shared/tags';
 import Img from '@/components/shared/Img';
 import { Icons } from '@/assets/icons';
 
-export default function CourseCard(props) {
-  
+export default function CourseCard({ value, ...props }) {
+  console.log('Course', value);
+
   return (
     <Fragment>
       <div className="card p-5">
         <figure>
-          <Img src={props.img} alt="ModelTest" className="w-full h-[15rem]  object-cover" />
+          <Img
+            src={value?.image}
+            alt="ModelTest"
+            width={500}
+            height={400}
+            className="w-full h-[15rem]  object-cover"
+          />
         </figure>
         <div>
           <div className="flex justify-between items-center">
-            <Tags.Primary presets="yellow" text="BCS Exam" />
-            <StarRating rating={4} totalReviews={10} />
+            <Tags.Primary presets="yellow" text={value?.category} />
+            <StarRating
+              rating={value?.avgRating}
+              totalReviews={value?.totalReview}
+            />
           </div>
 
-          <Typography.Text className="mt-6 text-md font-bold">{props.title}</Typography.Text>
+          <Typography.Text className="mt-6 text-md font-bold">
+            {value.title}
+          </Typography.Text>
           <div className="details flex justify-start items-center mt-4 gap-6">
-            <div className='flex gap-1'>
+            <div className="flex gap-1">
               <Icons.GraduationCap />
-              <Typography.Text>10 Tests</Typography.Text>
+              <Typography.Text>{value?.testCount}</Typography.Text>
             </div>
-            <div className='flex gap-1 items-center'>
+            <div className="flex gap-1 items-center">
               <Icons.userMultiple />
-              <Typography.Text>50</Typography.Text>
+              <Typography.Text>{value?.totalEnrolled}</Typography.Text>
             </div>
             {/* <IconBadge title="10 Tests" img={assets}></IconBadge>
             <IconBadge title="50" img={assets.userMultiple}></IconBadge> */}
@@ -42,7 +54,9 @@ export default function CourseCard(props) {
           </div>
 
           <div className="flex justify-between ">
-            <Typography.Text className="text-md font-bold">${props.price}</Typography.Text>
+            <Typography.Text className="text-md font-bold">
+              ${value?.price}
+            </Typography.Text>
 
             <div className="icon">
               <svg

@@ -3,6 +3,8 @@ import Features from '@/components/pages/home/Features';
 import Hero from '@/components/pages/home/Hero';
 import Category from '@/components/ui/Catrgory';
 import CompactBundler from '@/components/ui/sections/CompactBundler';
+import { GET_ALL_BUNDLE_HOMEPAGE_API_URL } from '@/helpers/apiUrl';
+import { dataFetcher } from '@/providers/ServerCall';
 
 // export const metadata = {
 //     title: "Home",
@@ -25,15 +27,32 @@ export const viewport = {
   themeColor: 'black',
 };
 
-const Home = () => {
-  // const data = await dataFetcher({
-  //     url: GET_ALL_PRODUCT_API,
-  //     options: {
-  //         cache: "no-store"
-  //     },
-  //     requireAuth: false
-  // })
+const Home = async () => {
+  const popular = await dataFetcher({
+    url: `${GET_ALL_BUNDLE_HOMEPAGE_API_URL}?section=POPULAR`,
+    options: {
+      cache: 'no-store',
+    },
+    requireAuth: false,
+  });
 
+  // console.log('POPular data', popular.data);
+  const top_rated = await dataFetcher({
+    url: `${GET_ALL_BUNDLE_HOMEPAGE_API_URL}?section=TOP_RATED`,
+    options: {
+      cache: 'no-store',
+    },
+    requireAuth: false,
+  });
+  const free = await dataFetcher({
+    url: `${GET_ALL_BUNDLE_HOMEPAGE_API_URL}?section=FREE`,
+    options: {
+      cache: 'no-store',
+    },
+    requireAuth: false,
+  });
+
+  // TODO: App call is following bad approaches
   return (
     <div>
       <Hero />
@@ -42,31 +61,31 @@ const Home = () => {
         badge="Popular course"
         title="Give exam on the Trending Model-Tests."
         details=""
-        tabHeader={['BCS', 'Bank jobs', 'Admission Exam']}
+        tabHeader={Object.keys(popular?.data)}
         isExplore={false}
         allowTab={true}
+        data={popular?.data}
       />
       <Category />
 
-      <CompactBundler
+      {/* <CompactBundler
         badge="100% Free"
         title="Get Bank job-ready for an in-demand career"
         details="Gain the skills and confidence needed to stand out in the competitive job market and embark on a successful journey toward an in-demand banking career."
         tabHeader={['BCS', 'Bank jobs', 'Admission Exam']}
         isExplore={true}
         allowTab={false}
-      />
+      /> */}
       <BecomeExaminer />
 
-      <CompactBundler
+      {/* <CompactBundler
         badge="Top Rated Tests"
         title="Explore Top Model Test Exams"
         details="Dive into our curated selection of top-tier model tests, meticulously designed to elevate your preparation."
         tabHeader={['All', 'Admission', 'BCS', 'Bank jobs', 'University']}
         isExplore={true}
         allowTab={true}
-      />
-
+      /> */}
     </div>
   );
 };
