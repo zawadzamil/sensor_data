@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from 'antd';
 import { Typography } from '@/components/shared/typography';
 import { Button } from '@/components/shared/button';
@@ -7,16 +7,37 @@ import BaseForm from '@/components/form/BaseForm';
 import useFormItems from './hooks/useOtpFormItems';
 import { Icons } from '@/assets/icons';
 import Link from 'next/link';
-import { PATH_RESET_PASSWORD } from '@/helpers/Slugs';
+import { PATH_HOME, PATH_LOGIN, PATH_RESET_PASSWORD } from '@/helpers/Slugs';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { USER_OTP_VERIFY_API_URL } from '@/helpers/apiUrl';
+import api from '@/providers/Api';
+import { Toast } from '@/components/shared/toast/Toast';
 
 const OTPPage = () => {
   const formItems = useFormItems();
+  const searchParams = useSearchParams();
+  const email = searchParams.get('email');
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const onChange = (text) => {
-    console.log('onChange:', text);
-  };
-  const sharedProps = {
-    onChange,
+  const handleSubmit = async (form) => {
+    try {
+      await form.validateFields();
+      const value = form.getFieldsValue(true);
+      api.post(
+        {
+          url: `${USER_OTP_VERIFY_API_URL}?code=${value.otp}&email=${email}`,
+          body:{},
+          setLoading: setIsLoading,
+        },
+        (res) => {
+          router.push(PATH_HOME);
+          Toast('success', 'Registration successful', '');
+        },
+      );
+    } catch (error) {
+      console.log('Form validation failed:', error);
+    }
   };
 
   return (
@@ -33,13 +54,20 @@ const OTPPage = () => {
         </Typography.Text>
 
         <Typography.Text className="text-center w-full font-semibold mb-5">
-          +880-1234567890
+          {email}
         </Typography.Text>
         <BaseForm
           formItems={formItems}
           renderExtraSection={(form) => (
             <div>
-              <Button.Primary className="w-full">Reset Password</Button.Primary>
+              <Button.Primary
+                className="w-full"
+                onClick={() => handleSubmit(form)}
+                loading={isLoading}
+                disabled={isLoading}
+              >
+                Verify OTP
+              </Button.Primary>
               <Button.Outline className="w-full mt-1" buttonType="text">
                 <span className="text-primary"> Re-send code</span>
               </Button.Outline>

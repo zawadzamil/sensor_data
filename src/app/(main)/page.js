@@ -26,6 +26,14 @@ export const viewport = {
 };
 
 const Home = () => {
+  // const data = await dataFetcher({
+  //     url: GET_ALL_PRODUCT_API,
+  //     options: {
+  //         cache: "no-store"
+  //     },
+  //     requireAuth: false
+  // })
+
   return (
     <div>
       <Hero />

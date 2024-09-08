@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge';
 import StarRating from '../rating/StarRating';
 
 export default function CourseCard(props) {
+  
   return (
     <div
       onClick={props.onClick}

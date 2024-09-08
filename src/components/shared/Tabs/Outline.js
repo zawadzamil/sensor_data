@@ -35,7 +35,7 @@ const renderTabBar = (
   );
 };
 
-const Outline = ({ items, defaultActiveKey, tabBarClassName, tabBarUnderLine, ...props }) => {
+const Outline = ({ items=[], defaultActiveKey=0, tabBarClassName, tabBarUnderLine, ...props }) => {
   return (
     <Tabs
       {...props}
@@ -57,11 +57,6 @@ Outline.propTypes = {
       children: PropTypes.node.isRequired,
     }),
   ).isRequired,
-};
-
-Outline.defaultProps = {
-  defaultActiveKey: 0,
-  items: [],
 };
 
 export default Outline;

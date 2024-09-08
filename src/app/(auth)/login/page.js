@@ -1,7 +1,7 @@
 'use client';
 
 import BaseForm from '@/components/form/BaseForm';
-import React from 'react';
+import React, { useState } from 'react';
 import useLoginFormItems from './hooks/useLoginFormItems';
 import { Typography } from '@/components/shared/typography';
 import { Button } from '@/components/shared/button';
@@ -9,13 +9,37 @@ import { onValidateForm } from '@/helpers/utils';
 import { Checkbox } from 'antd';
 import Link from 'next/link';
 import { PATH_FORGOT_PASSWORD, PATH_REGISTER } from '@/helpers/Slugs';
+import { useRouter } from 'next/navigation';
+import api from '@/providers/Api';
+import { STUDENT_REGISTER_API_URL } from '@/helpers/apiUrl';
+import { ACCESS_TOKEN } from '@/helpers/constant';
+import { useAuthContext } from '@/contexts/AuthContextProvider';
 
 const Login = () => {
   const formItems = useLoginFormItems();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (form) => {
-    // const value = onValidateForm(form);
-    // console.log("----",value);
+  const { setProfile } = useAuthContext();
+  const handleSubmit = async (form) => {
+    try {
+      await form.validateFields();
+      const value = form.getFieldsValue(true);
+
+      api.post(
+        {
+          url: STUDENT_REGISTER_API_URL,
+          body: value,
+          setLoading: setIsLoading,
+        },
+        (res) => {
+          console.log('response', res);
+          localStorage.setItem(ACCESS_TOKEN, res.data.token);
+        },
+      );
+    } catch (error) {
+      console.log('Form validation failed:', error);
+    }
   };
 
   const onChange = (e) => {
@@ -49,6 +73,8 @@ const Login = () => {
                   className="w-full"
                   type="primary"
                   onClick={() => handleSubmit(form)}
+                  loading={isLoading}
+                  disabled={isLoading}
                 >
                   Login
                 </Button.Primary>
