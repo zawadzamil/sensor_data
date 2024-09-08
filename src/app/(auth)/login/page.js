@@ -48,19 +48,19 @@ const Login = () => {
 
   return (
     <div className="w-full">
-      <Typography.SubHeading className="text-center w-full">
+      <Typography.SubHeading className="text-center w-full text-secondary-dark">
         Welcome back!
       </Typography.SubHeading>
-      <Typography.Text className="text-center w-full">
+      <Typography.Text className="text-center w-full text-secondary text-md mt-4">
         ModelTest gives you the resources and tests you need to prepare for your
         exams.
       </Typography.Text>
-      <div className="px-10 pt-10">
+      <div className="px-10 pt-12">
         <BaseForm
           formItems={formItems}
           renderExtraSection={(form) => (
             <div>
-              <div className="w-full flex justify-between mb-10">
+              <div className="w-full flex justify-between">
                 <Checkbox onChange={onChange}>Remember me </Checkbox>
                 <Link href={PATH_FORGOT_PASSWORD} className="cursor-pointer">
                   <Typography.Text className="text-primary">
@@ -70,7 +70,7 @@ const Login = () => {
               </div>
               <div>
                 <Button.Primary
-                  className="w-full"
+                  className="w-full mt-9"
                   type="primary"
                   onClick={() => handleSubmit(form)}
                   loading={isLoading}
@@ -80,7 +80,7 @@ const Login = () => {
                 </Button.Primary>
               </div>
 
-              <div className="flex mt-3">
+              <div className="flex mt-4">
                 <Typography.Text className="">
                   {'Don’t have an account?'}
                 </Typography.Text>

@@ -44,7 +44,7 @@ const BaseForm = ({
         onFinishFailed={onFinishFailed}
         scrollToFirstError
       >
-        <div className="grid w-full grid-flow-row-dense grid-cols-12 gap-x-3">
+        <div className="grid w-full grid-flow-row-dense grid-cols-12 gap-x-4">
           {formItems.map((item) => (
             <div key={item.name} className={item.className}>
               <Form.Item
