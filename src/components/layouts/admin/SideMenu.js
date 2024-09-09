@@ -3,11 +3,10 @@
 import Link from "next/link";
 import {ADMIN_ARTICLES_PATH} from "@/helpers/Slugs";
 import Image from "next/image";
-import LogoFull from "public/logo-full.webp";
 import {usePathname} from "next/navigation";
 import {useState} from "react";
 
-import RightArrow from "public/right-arrow.webp";
+// import RightArrow from "public/right-arrow.webp";
 import {ADMIN_NAVS} from "@/helpers/Navs";
 
 const SideMenu = () => {
@@ -42,11 +41,11 @@ const SideMenu = () => {
                 className="bg-white w-8 h-8 absolute top-4 -right-8 flex-center cursor-pointer"
                 onClick={toggleMenu}
             >
-                <Image
+                {/* <Image
                     className={`transition-all ${!toggle ? "rotate-180" : ""}`}
                     src={RightArrow}
                     alt="Arrow for collapse side menu"
-                />
+                /> */}
             </div>
             <Link
                 title="Admin dashboard link"
@@ -55,10 +54,10 @@ const SideMenu = () => {
                 <div
                     className="w-full h-16 flex-center p-4"
                 >
-                    <Image
+                    {/* <Image
                         src={LogoFull}
                         alt="STS full logo"
-                    />
+                    /> */}
                 </div>
             </Link>
             <nav>

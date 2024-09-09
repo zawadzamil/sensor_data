@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { PATH_FORGOT_PASSWORD, PATH_REGISTER } from '@/helpers/Slugs';
 import { useRouter } from 'next/navigation';
 import api from '@/providers/Api';
-import { STUDENT_REGISTER_API_URL } from '@/helpers/apiUrl';
+import { STUDENT_REGISTER_API_URL, USER_LOGIN_API_URL } from '@/helpers/apiUrl';
 import { ACCESS_TOKEN } from '@/helpers/constant';
 import { useAuthContext } from '@/contexts/AuthContextProvider';
 
@@ -20,7 +20,7 @@ const Login = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const { setProfile } = useAuthContext();
+  const { setProfile, onRedirectionPage, setIsLogin } = useAuthContext();
   const handleSubmit = async (form) => {
     try {
       await form.validateFields();
@@ -28,13 +28,15 @@ const Login = () => {
 
       api.post(
         {
-          url: STUDENT_REGISTER_API_URL,
+          url: USER_LOGIN_API_URL,
           body: value,
           setLoading: setIsLoading,
         },
         (res) => {
-          console.log('response', res);
-          localStorage.setItem(ACCESS_TOKEN, res.data.token);
+          localStorage.setItem(ACCESS_TOKEN, res?.data?.token?.access);
+          setProfile(res.data.user);
+          setIsLogin(true);
+          onRedirectionPage();
         },
       );
     } catch (error) {

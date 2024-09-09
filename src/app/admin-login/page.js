@@ -6,7 +6,6 @@ import {signIn} from "next-auth/react";
 import {ADMIN_ARTICLES_PATH, PATH_HOME} from "@/helpers/Slugs";
 import Image from "next/image";
 import Spinner from "@/components/shared/Spinner";
-import Logo from "public/logo.webp";
 import Link from "next/link";
 
 
@@ -54,10 +53,10 @@ const Login = () => {
                     title="Home page link"
                     href={PATH_HOME}
                 >
-                    <Image
+                    {/* <Image
                         src={Logo}
                         alt="STS logo"
-                    />
+                    /> */}
                 </Link>
 
                 <h2 className="my-3 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">

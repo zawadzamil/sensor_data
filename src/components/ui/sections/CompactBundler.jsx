@@ -16,8 +16,10 @@ const CompactBundler = ({
   details,
   tabHeader = [],
   allowTab = true,
+  data,
 }) => {
   const router = useRouter();
+  console.log('bundler tab header', tabHeader);
   return (
     <div className="page-container my-20">
       <div className="">
@@ -46,19 +48,20 @@ const CompactBundler = ({
               children: (
                 <>
                   <div className="course-card mt-6 grid grid-cols-3 gap-x-6  gap-y-16">
-                    {[...Array(6)].map((_, index) => (
-                      <Fragment key={index}>
-                        <CourseCard
-                          onClick={() =>
+                    {data[res].map((bundle, index) => (
+                          <Fragment key={index}>
+                            <CourseCard
+                              onClick={() =>
                             router.push(`${PATH_DETAILS}/${index}`)
                           }
                           className="cursor-pointer"
                           title="All In One - 2023 BCS Preparation Model test Bundle set."
-                          price="199.00"
-                          img={assets.course2}
-                        ></CourseCard>
-                      </Fragment>
-                    ))}
+                              price="199.00"
+                              value={bundle}
+                              img={assets.course2}
+                            ></CourseCard>
+                          </Fragment>
+                        ))}
                   </div>
                 </>
               ),
@@ -68,12 +71,13 @@ const CompactBundler = ({
       ) : (
         <>
           <div className="course-card mt-6 grid grid-cols-3 gap-x-6  gap-y-16">
-            {[...Array(6)].map((_, index) => (
+            {[...Array(6)].map((bundle, index) => (
               <Fragment key={index}>
                 <CourseCard
                   title="All In One - 2023 BCS Preparation Model test Bundle set."
                   price="199.00"
                   img={assets.course2}
+                  value={bundle}
                 ></CourseCard>
               </Fragment>
             ))}

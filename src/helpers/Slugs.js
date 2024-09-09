@@ -11,4 +11,5 @@ export const PATH_REGISTER = '/register';
 export const PATH_FORGOT_PASSWORD = '/forgot-password';
 export const PATH_RESET_PASSWORD = '/reset-password';
 export const PATH_OTP_VERIFY = '/otp-verify';
+export const PATH_PROFILE = '/otp-verify';
 

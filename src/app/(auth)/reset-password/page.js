@@ -23,7 +23,9 @@ const ResetPassword = () => {
           body: value,
           setLoading: setIsLoading,
         },
-        (res) => {},
+        (res) => {
+          
+        },
       );
     } catch (error) {
       console.log('Form validation failed:', error);

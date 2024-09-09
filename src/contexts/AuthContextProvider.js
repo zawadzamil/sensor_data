@@ -14,8 +14,8 @@ export function useAuthContext() {
 }
 
 export default function AuthContextProvider({ children }) {
-  const [isLogin, setIsLogin] = useState(true);
-  const [profile, setProfile] = useState(null);
+  const [isLogin, setIsLogin] = useState(false);
+  const [profile, setProfile] = useState({});
   const [role, setRole] = useState();
   const [loading, setLoading] = useState(false);
   const [profileLoading, setProfileLoading] = useState(true);
@@ -28,15 +28,23 @@ export default function AuthContextProvider({ children }) {
   const pathName = usePathname();
 
   useEffect(() => {
-    const token = localStorage.getItem(ACCESS_TOKEN);
+    const token = isToken();
     if (token) {
       if (['/login'].includes(pathName)) router.push('/');
       getUserProfile();
     } else {
       setProfileLoading(false);
-      if (!['/', '/login', '/register'].includes(pathName)) router.push('/login');
+      if (!['/', '/login', '/register'].includes(pathName))
+        router.push('/login');
     }
   }, [isLogin]);
+
+  const isToken = () => {
+    // if (typeof window !== 'undefined') {
+    // }
+    return localStorage?.getItem(ACCESS_TOKEN) ? true : false;
+    // return false;
+  };
 
   // const login = async (body, callback) => {
   //   await api.post({ url: LOGIN_URL, setLoading, body }, (response) => {
@@ -211,9 +219,13 @@ export default function AuthContextProvider({ children }) {
   };
 
   const onRedirectionPage = () => {
-    const { redirectTo } = router.query;
-    if (redirectTo && typeof redirectTo === 'string') {
-      router.push(redirectTo);
+    if (router.query && router.query.redirectTo) {
+      const { redirectTo } = router.query;
+      if (redirectTo && typeof redirectTo === 'string') {
+        router.push(redirectTo);
+      } else {
+        router.push(PATH_HOME);
+      }
     } else {
       router.push(PATH_HOME);
     }
@@ -222,7 +234,6 @@ export default function AuthContextProvider({ children }) {
   const logout = () => {
     setIsLogin(false);
     setProfile(null);
-    setLoginModal(false);
     localStorage.clear();
     router.push('/login');
   };
@@ -231,7 +242,9 @@ export default function AuthContextProvider({ children }) {
     <AuthContext.Provider
       value={{
         isLogin,
+        setIsLogin,
         profile,
+        setProfile,
         loading,
         profileLoading,
         role,
@@ -252,6 +265,8 @@ export default function AuthContextProvider({ children }) {
         // profileChangePassword,
         // sendForgetPasswordOtp,
         // otpVerifyForgetPassword,
+        onRedirectionPage,
+        isToken,
       }}
     >
       {children}
