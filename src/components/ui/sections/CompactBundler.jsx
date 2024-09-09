@@ -71,7 +71,7 @@ const CompactBundler = ({
       ) : (
         <>
           <div className="course-card mt-6 grid grid-cols-3 gap-x-6  gap-y-16">
-            {[...Array(6)].map((bundle, index) => (
+            {data?.map((bundle, index) => (
               <Fragment key={index}>
                 <CourseCard
                   title="All In One - 2023 BCS Preparation Model test Bundle set."

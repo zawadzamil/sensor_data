@@ -172,3 +172,8 @@ export const isEmptyObject = (obj) => {
 };
 
 
+export function getBestRatedCourses(coursesByCategory, limit = 6) {
+  const allCourses = Object.values(coursesByCategory).flat();
+  const sortedCourses = allCourses.sort((a, b) => b.avgRating - a.avgRating);
+  return sortedCourses.slice(0, limit);
+}

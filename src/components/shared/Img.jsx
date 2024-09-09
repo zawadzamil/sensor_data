@@ -1,4 +1,5 @@
 'use client';
+import assets from '@/assets/asset';
 import Image from 'next/image';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -15,7 +16,7 @@ const Img = ({
   ...rest
 }) => {
   const [error, setError] = React.useState(false);
-  const placeholderSrc = isProfile ? '' : '';
+  const placeholderSrc = isProfile ? '' : assets.ImagePlaceholder;
 
   const handleError = () => {
     setError(true);

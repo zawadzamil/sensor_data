@@ -17,6 +17,7 @@ import course5 from './images/course5.png';
 import course6 from './images/course6.png';
 import eclips from './images/eclips.png';
 import floatingCloud from './images/floating_cloud.png';
+import ImagePlaceholder from './images/image_placeholder.png';
 
 const assets = {
   searchIcon,
@@ -38,6 +39,7 @@ const assets = {
   eclips,
   bundelCover,
   trashIcon,
+  ImagePlaceholder
 };
 
 export default assets;
