@@ -49,19 +49,19 @@ const CompactBundler = ({
                 <>
                   <div className="course-card mt-6 grid grid-cols-3 gap-x-6  gap-y-16">
                     {data[res].map((bundle, index) => (
-                          <Fragment key={index}>
-                            <CourseCard
-                              onClick={() =>
-                            router.push(`${PATH_DETAILS}/${index}`)
+                      <Fragment key={index}>
+                        <CourseCard
+                          onClick={() =>
+                            router.push(`${PATH_DETAILS}/${bundle?.id}`)
                           }
                           className="cursor-pointer"
                           title="All In One - 2023 BCS Preparation Model test Bundle set."
-                              price="199.00"
-                              value={bundle}
-                              img={assets.course2}
-                            ></CourseCard>
-                          </Fragment>
-                        ))}
+                          price="199.00"
+                          value={bundle}
+                          img={assets.course2}
+                        />
+                      </Fragment>
+                    ))}
                   </div>
                 </>
               ),

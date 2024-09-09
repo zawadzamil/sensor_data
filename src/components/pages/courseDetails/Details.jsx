@@ -4,7 +4,8 @@ import CourseOverview from './CourseOverview';
 import DetailsReview from './DetailsReview';
 import PrimaryDetails from './PrimaryDetails';
 
-const Details = () => {
+const Details = ({data}) => {
+  // console.log('data', data);
   const DetailsTab = [
     {
       key: 'Overview',

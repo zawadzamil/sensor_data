@@ -12,9 +12,10 @@ export default function CourseCard({ value, ...props }) {
 
   return (
     <Fragment>
-      <div className="card p-5">
+      <div
         onClick={props.onClick}
         className={twMerge('card p-5', props.className)}
+      >
         <figure>
           <Img
             src={value?.image}
