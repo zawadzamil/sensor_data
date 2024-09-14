@@ -171,9 +171,41 @@ export const isEmptyObject = (obj) => {
   return Object.keys(obj).length === 0;
 };
 
-
 export function getBestRatedCourses(coursesByCategory, limit = 6) {
   const allCourses = Object.values(coursesByCategory).flat();
   const sortedCourses = allCourses.sort((a, b) => b.avgRating - a.avgRating);
   return sortedCourses.slice(0, limit);
 }
+
+export const getStringAndObjectValue = (value, key) => {
+  if (value === undefined || value === null) {
+    return 'N/A';
+  }
+  return typeof value === 'string'
+    ? value
+    : value[key]
+      ? value[key]
+      : 'Not Found key';
+};
+
+export const getValue = (value, key) => {
+  if (!value || (Array.isArray(value) && value.length === 0)) {
+    return 'N/A';
+  }
+
+  if (Array.isArray(value)) {
+    return (
+      value
+        .map((item) => {
+          if (typeof item === 'object' && item !== null) {
+            return key && item[key] ? item[key] : 'N/A';
+          }
+          return typeof item === 'string' ? item : 'N/A';
+        })
+        .filter((item) => item !== 'N/A')
+        .join(', ') || 'N/A'
+    );
+  }
+
+  return typeof value === 'string' && value.trim() ? value : 'N/A';
+};

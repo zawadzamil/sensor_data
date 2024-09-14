@@ -52,7 +52,7 @@ const Home = async () => {
     },
     requireAuth: false,
   });
-
+  
   // TODO: App call is following bad approaches
   return (
     <div>
@@ -83,7 +83,7 @@ const Home = async () => {
         badge="Top Rated Tests"
         title="Explore Top Model Test Exams"
         details="Dive into our curated selection of top-tier model tests, meticulously designed to elevate your preparation."
-        tabHeader={Object.keys(top_rated?.data)}
+        tabHeader={Object?.keys(top_rated?.data)}
         isExplore={false}
         allowTab={true}
         data={top_rated?.data}

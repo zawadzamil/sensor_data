@@ -6,28 +6,25 @@ import { Typography } from '@/components/shared/typography';
 import { twMerge } from 'tailwind-merge';
 import StarRating from '../rating/StarRating';
 import { Fragment } from 'react';
+import { getStringAndObjectValue } from '@/helpers/utils';
 
-export default function CourseCard({ value, ...props }) {
-  console.log('Course', value);
-
+export default function CourseCard({ value, onClick, className }) {
   return (
     <Fragment>
-      <div
-        onClick={props.onClick}
-        className={twMerge('card p-5', props.className)}
-      >
+      <div onClick={onClick} className={twMerge('card p-5', className)}>
         <figure>
           <Img
             src={value?.image}
             alt="ModelTest"
-            width={500}
-            height={400}
-            className="w-full h-[15rem]  object-cover"
+            className="w-full h-60 object-cover"
           />
         </figure>
         <div>
           <div className="flex justify-between items-center">
-            <Tags.Primary presets="yellow" text={value?.category} />
+            <Tags.Primary
+              presets="yellow"
+              text={getStringAndObjectValue(value?.category, 'title')}
+            />
             <StarRating
               rating={value?.avgRating}
               totalReviews={value?.totalReview}

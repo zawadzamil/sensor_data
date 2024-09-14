@@ -1,5 +1,5 @@
 const API_VERSION = '/api/1.0.0';
-export const ROOT_URL = 'http://192.168.0.109:8070';
+export const ROOT_URL = 'http://192.168.0.111:8070';
 export const API_URL = `${ROOT_URL}${API_VERSION}`;
 export const API_URL_PUBLIC = `${ROOT_URL}${API_VERSION}/public`;
 export const API_URL_SECURE = `${ROOT_URL}${API_VERSION}/secured`;

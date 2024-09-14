@@ -34,16 +34,16 @@ export default function AuthContextProvider({ children }) {
       getUserProfile();
     } else {
       setProfileLoading(false);
-      if (!['/', '/login', '/register'].includes(pathName))
-        router.push('/login');
+      // if (!['/', '/login', '/register'].includes(pathName))
+      //   router.push('/login');
     }
   }, [isLogin]);
 
   const isToken = () => {
     // if (typeof window !== 'undefined') {
     // }
-    return localStorage?.getItem(ACCESS_TOKEN) ? true : false;
     // return false;
+    return localStorage?.getItem(ACCESS_TOKEN) ? true : false;
   };
 
   // const login = async (body, callback) => {

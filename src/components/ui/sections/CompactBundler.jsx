@@ -19,7 +19,6 @@ const CompactBundler = ({
   data,
 }) => {
   const router = useRouter();
-  console.log('bundler tab header', tabHeader);
   return (
     <div className="page-container my-20">
       <div className="">
@@ -55,10 +54,7 @@ const CompactBundler = ({
                             router.push(`${PATH_DETAILS}/${bundle?.id}`)
                           }
                           className="cursor-pointer"
-                          title="All In One - 2023 BCS Preparation Model test Bundle set."
-                          price="199.00"
                           value={bundle}
-                          img={assets.course2}
                         />
                       </Fragment>
                     ))}

@@ -1,136 +1,195 @@
+// CategoriesPage.js
 'use client';
-
-import React, { Fragment, useState } from 'react';
-import { Card, Rate, Slider, Radio, Checkbox } from 'antd';
-import { Input } from '@/components/shared/input';
+import React, { Fragment, useEffect, useState } from 'react';
+import { Button, Input, Pagination } from 'antd';
+import { useFilters } from '@/globalHooks/useFilters';
+import {
+  CheckboxFilter,
+  RadioFilter,
+  RangeFilter,
+  RatingFilter,
+} from '@/components/shared/filter-component/FilterComponents';
+import { useGetAllData } from '@/globalHooks/useGetAllData';
+import { GET_ALL_BUNDLE_API_URL } from '@/helpers/apiUrl';
+import { PATH_DETAILS } from '@/helpers/Slugs';
+import { useRouter, useSearchParams } from 'next/navigation';
 import CourseCard from '@/components/ui/cards/CourseCard';
-import assets from '../../../assets/asset';
-import { Paginations } from '@/components/shared/paginations';
+import api from '@/providers/Api';
 
 const { Search } = Input;
 
 const CategoriesPage = () => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [priceRange, setPriceRange] = useState([0, 100000]);
-  const [bundleType, setBundleType] = useState('All');
-  const [rating, setRating] = useState(0);
-  const [sortBy, setSortBy] = useState('Newest');
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [loading, setLoading] = useState(false);
+  // const { dataList, loadingList, getAllData, totalElements } = useGetAllData(
+  //   GET_ALL_BUNDLE_API_URL,
+  // );
+  const [dataList, setDataList] = useState([]);
+  const [totalElements, setTotalElements] = useState(0);
+  const [categories, setCategories] = useState([]);
+  const [filters, updateFilter, syncUrlWithFilters, resetFilters] = useFilters({
+    categories: [],
+    // priceRange: [0, 100000],
+    bundleType: 'ALL',
+    rating: 0,
+    sort: 'NEWEST',
+    page: 1,
+    pageSize: 10,
+  });
 
-  const categories = [
-    {
-      key: 'bcs',
-      label: 'BCS Exam',
-      subCategories: [
-        { key: '2023', label: '2023 (12)' },
-        { key: '2022', label: '2022 (15)' },
-        { key: '2021', label: '2021 (12)' },
-      ],
-    },
-    { key: 'bank', label: 'Bank Job' },
-    { key: 'admission', label: 'Admission' },
-    { key: 'others', label: 'Others' },
+  useEffect(() => {
+    const fetchCategories = async () => {
+      // This is a mock implementation. Replace with your actual API call.
+      const mockCategories = [
+        {
+          key: 'bcs',
+          label: 'BCS Exam',
+          children: [
+            { key: 'bcs-2023', label: '2023 (12)' },
+            { key: 'bcs-2022', label: '2022 (15)' },
+            { key: 'bcs-2021', label: '2021 (12)' },
+          ],
+        },
+        {
+          key: 'bank',
+          label: 'Bank Job',
+          children: [
+            { key: 'bank-officer', label: 'Officer (20)' },
+            { key: 'bank-cash', label: 'Cash (10)' },
+          ],
+        },
+        {
+          key: 'admission',
+          label: 'Admission',
+          children: [
+            { key: 'admission-public', label: 'Public University (30)' },
+            { key: 'admission-private', label: 'Private University (25)' },
+            { key: 'admission-medical', label: 'Medical College (15)' },
+          ],
+        },
+        { key: 'others', label: 'Others (5)' },
+      ];
+      setCategories(mockCategories);
+    };
+
+    fetchCategories();
+  }, []);
+
+  // Sync URL with filters whenever filters change
+  useEffect(() => {
+    syncUrlWithFilters();
+  }, [filters, syncUrlWithFilters]);
+
+  useEffect(() => {
+    getAllBundle();
+  }, [filters]);
+
+  const bundleTypeOptions = [
+    { value: 'ALL', label: 'All (514)' },
+    { value: 'FREE', label: 'Free (12)' },
+    { value: 'PAID', label: 'Paid (8)' },
   ];
 
-  const products = [
-    { id: 1, title: 'Product 1', price: 15000, rating: 4.5, type: 'Paid' },
-    { id: 2, title: 'Product 2', price: 20000, rating: 4.0, type: 'Free' },
-    { id: 3, title: 'Product 3', price: 18000, rating: 4.8, type: 'Paid' },
+  const sortByOptions = [
+    { value: 'Rating', label: 'Rating' },
+    { value: 'PRICE_ASC', label: 'Price: Low to High' },
+    { value: 'PRICE_DESC', label: 'Price: High to Low' },
+    { value: 'NEWEST', label: 'Newest' },
+    { value: 'OLDEST', label: 'Oldest' },
   ];
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategories((prev) =>
-      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category],
+  const handlePageChange = (page, pageSize) => {
+    updateFilter('page', page);
+    updateFilter('pageSize', pageSize);
+  };
+
+  const getAllBundle = () => {
+    api.getAllData(
+      {
+        url: GET_ALL_BUNDLE_API_URL,
+        params: {
+          page: filters.page - 1,
+          pageSize: filters.pageSize,
+          sort: filters.sortBy,
+          categories: filters.categories.join(','),
+          bundleType: filters.bundleType,
+          rating: filters.rating,
+          // priceRange: filters.priceRange.join(','),
+        },
+        setLoading: setLoading,
+      },
+      (res) => {
+        setDataList(res.data.content);
+        setTotalElements(res.data.totalElements);
+      },
     );
   };
 
   return (
     <div className="page-container flex min-h-screen">
-      {/* Custom Sidebar */}
       <div className="w-64 p-4">
-        <Input.Text placeholder="Search" />
-
-        <div className="mb-4">
-          <h3 className="font-semibold mb-2">Categories</h3>
-          {categories.map((category) => (
-            <div key={category.key} className="mb-2">
-              <Checkbox
-                onChange={() => handleCategoryChange(category.key)}
-                checked={selectedCategories.includes(category.key)}
-              >
-                {category.label}
-              </Checkbox>
-              {category.subCategories && (
-                <div className="ml-4">
-                  {category.subCategories.map((sub) => (
-                    <Checkbox
-                      key={sub.key}
-                      onChange={() => handleCategoryChange(sub.key)}
-                      checked={selectedCategories.includes(sub.key)}
-                    >
-                      {sub.label}
-                    </Checkbox>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold mb-2">Bundle Type</h3>
-          <Radio.Group value={bundleType} onChange={(e) => setBundleType(e.target.value)}>
-            <Radio value="All">All (514)</Radio>
-            <Radio value="Free">Free (12)</Radio>
-            <Radio value="Paid">Paid (8)</Radio>
-          </Radio.Group>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold mb-2">Ratings</h3>
-          {[5, 4, 3, 2, 1].map((star) => (
-            <Checkbox key={star} onChange={() => setRating(star)}>
-              <Rate disabled defaultValue={star} /> & up
-            </Checkbox>
-          ))}
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold mb-2">Price</h3>
-          <Slider range min={0} max={100000} defaultValue={priceRange} onChange={setPriceRange} />
-          <div className="flex justify-between">
-            <span>৳ {priceRange[0]}</span>
-            <span>৳ {priceRange[1]}</span>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-2">Sort by</h3>
-          <Radio.Group value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <Radio value="Rating">Rating</Radio>
-            <Radio value="PriceLowToHigh">Price: Low to High</Radio>
-            <Radio value="PriceHighToLow">Price: High to Low</Radio>
-            <Radio value="Newest">Newest</Radio>
-          </Radio.Group>
-        </div>
+        {/* <Search placeholder="Search" className="mb-4" /> */}
+        <Button onClick={resetFilters} className="mb-4 w-full">
+          Reset Filters
+        </Button>
+        <CheckboxFilter
+          title="Categories"
+          options={categories}
+          selected={filters.categories}
+          onChange={(category) => {
+            const newCategories = filters.categories.includes(category)
+              ? filters.categories.filter((c) => c !== category)
+              : [...filters.categories, category];
+            updateFilter('categories', newCategories);
+          }}
+        />
+        <RadioFilter
+          title="Bundle Type"
+          options={bundleTypeOptions}
+          value={filters.bundleType}
+          onChange={(value) => updateFilter('bundleType', value)}
+        />
+        <RatingFilter
+          value={filters.rating}
+          onChange={(value) => updateFilter('rating', value)}
+        />
+        {/* <RangeFilter
+          title="Price"
+          min={0}
+          max={100000}
+          value={filters.priceRange}
+          onChange={(value) => updateFilter('priceRange', value)}
+        /> */}
+        <RadioFilter
+          title="Sort by"
+          options={sortByOptions}
+          value={filters.sortBy}
+          onChange={(value) => updateFilter('sortBy', value)}
+        />
       </div>
-
-      {/* Main Content */}
-      <div className="flex-1 p-8">
-        <h2 className="text-3xl font-bold mb-4">Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(20)].map((product, index) => (
+      <div className="flex-1 p-4">
+        <div className="course-card mt-6 grid grid-cols-3 gap-x-6  gap-y-16">
+          {dataList?.map((bundle, index) => (
             <Fragment key={index}>
               <CourseCard
-                title="All In One - 2023 BCS Preparation Model test Bundle set."
-                price="199.00"
-                img={assets.course2}
-              ></CourseCard>
+                onClick={() => router.push(`${PATH_DETAILS}/${bundle?.id}`)}
+                className="cursor-pointer"
+                value={bundle}
+              />
             </Fragment>
           ))}
         </div>
-
-        <div className="flex justify-end my-8">
-          <Paginations.Primary />
+        <div className="my-4 flex justify-end">
+          <Pagination
+            defaultCurrent={0}
+            current={filters.page}
+            pageSize={filters.pageSize}
+            total={totalElements} // Replace with actual total count
+            onChange={handlePageChange}
+            showSizeChanger
+            showQuickJumper
+          />
         </div>
       </div>
     </div>
