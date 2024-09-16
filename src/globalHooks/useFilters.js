@@ -27,7 +27,7 @@ export const useFilters = (initialFilters, separator = ',') => {
 
     setFilters(filtersFromUrl);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty dependency array ensures this only runs once on mount
+  }, []);
 
   const updateFilter = useCallback((key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
@@ -36,27 +36,6 @@ export const useFilters = (initialFilters, separator = ',') => {
   const resetFilters = useCallback(() => {
     setFilters(initialFilters);
   }, [initialFilters]);
-
-  // Function to manually construct query string
-  // const constructQueryString = useCallback(
-  //   (filters, initialFilters, separator) => {
-  //     return Object.entries(filters)
-  //       .filter(([key, value]) => {
-  //         if (Array.isArray(value)) {
-  //           return value.length > 0;
-  //         }
-  //         return value !== initialFilters[key];
-  //       })
-  //       .map(([key, value]) => {
-  //         if (Array.isArray(value)) {
-  //           return `${encodeURIComponent(key)}=${value.map(encodeURIComponent).join(separator)}`;
-  //         }
-  //         return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-  //       })
-  //       .join('&');
-  //   },
-  //   [],
-  // );
 
   const constructQueryString = useCallback(
     (filters, initialFilters, separator) => {
@@ -77,7 +56,6 @@ export const useFilters = (initialFilters, separator = ',') => {
     },
     [],
   );
-  
 
   // Separate function to update URL
   const syncUrlWithFilters = useCallback(() => {
@@ -87,14 +65,40 @@ export const useFilters = (initialFilters, separator = ',') => {
       separator,
     );
 
-    const newUrl = queryString ? `?${queryString}` : '';
-    
+    const newUrl = queryString
+      ? `${window.location.pathname}?${queryString}`
+      : window.location.pathname;
 
-    if (newUrl !== window.location.search) {
-      console.log("---new url",newUrl);
-      router.push(newUrl, { scroll: false });
+    if (newUrl !== window.location.pathname + window.location.search) {
+      router.replace(newUrl, { scroll: false });
     }
-  }, [filters, initialFilters, router]);
+  }, [filters, initialFilters, router, separator, constructQueryString]);
+
+  // Sync URL with filters whenever filters change
+  useEffect(() => {
+    syncUrlWithFilters();
+  }, [filters, syncUrlWithFilters]);
 
   return [filters, updateFilter, syncUrlWithFilters, resetFilters];
 };
+
+// Function to manually construct query string
+// const constructQueryString = useCallback(
+//   (filters, initialFilters, separator) => {
+//     return Object.entries(filters)
+//       .filter(([key, value]) => {
+//         if (Array.isArray(value)) {
+//           return value.length > 0;
+//         }
+//         return value !== initialFilters[key];
+//       })
+//       .map(([key, value]) => {
+//         if (Array.isArray(value)) {
+//           return `${encodeURIComponent(key)}=${value.map(encodeURIComponent).join(separator)}`;
+//         }
+//         return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+//       })
+//       .join('&');
+//   },
+//   [],
+// );

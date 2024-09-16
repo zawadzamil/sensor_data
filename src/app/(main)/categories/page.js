@@ -76,14 +76,10 @@ const CategoriesPage = () => {
     fetchCategories();
   }, []);
 
-  // Sync URL with filters whenever filters change
-  useEffect(() => {
-    syncUrlWithFilters();
-  }, [filters, syncUrlWithFilters]);
-
-  useEffect(() => {
-    getAllBundle();
-  }, [filters]);
+  
+  // useEffect(() => {
+  //   getAllBundle();
+  // }, [filters]);
 
   const bundleTypeOptions = [
     { value: 'ALL', label: 'All (514)' },
