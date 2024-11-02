@@ -26,7 +26,7 @@ export const featureData = [
     {
       src: assets.handFist,
       title: "Access Anytime, Anywhere",
-      details: "Flexibility to practice at your convenience, whether at home or on the go, via our online platform.",
+      details: "Flexibility to practice at your convenience, whether at dealer-dashboard or on the go, via our online platform.",
     },
     {
       src: assets.pokerChip,

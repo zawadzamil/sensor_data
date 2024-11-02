@@ -12,6 +12,6 @@ export const openRoutes = [
     '/about',
     '/products',
     '/',
-    '/home',
+    '/dealer-dashboard',
     '/cart',
   ];
