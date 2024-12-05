@@ -17,8 +17,8 @@ const BaseLayout = ({children}) => {
             <Header/>
             <div className="flex gap-2 ">
                 <LeftNavBar/>
-                <main className="w-full min-h-[calc(100vh-112px-80px)]">
-                    <div className=" w-full h-screen flex flex-col items-center">
+                <main className="w-full min-h-[calc(100vh-112px-80px)] ">
+                    <div className="w-full min-h-full flex flex-col items-center">
                         {children}
                     </div>
 

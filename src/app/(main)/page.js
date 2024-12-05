@@ -14,11 +14,12 @@
 //     manifest:"./manifest.json",
 // }
 import React from 'react';
-import Slots from "@/components/pages/dealer-dashboard/Slots";
+import Sensors from "@/components/pages/Sensors";
+
 
 const Home = () => {
   return (
-      <Slots/>
+      <Sensors/>
   );
 };
 

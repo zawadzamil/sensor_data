@@ -1,13 +1,13 @@
-import {PATH_BECOME_AN_EXAMINER, PATH_CATEGORIES, PATH_HOME} from "@/helpers/Slugs";
+import {PATH_BECOME_AN_EXAMINER, PATH_CREATE_SENSORS, PATH_DEALER_DASHBOARD, PATH_HOME} from "@/helpers/Slugs";
 
 export const MAIN_NAVS = [
     {
         path: PATH_HOME,
-        title: "Slots"
+        title: "Sensors",
     },
     {
-        path: PATH_CATEGORIES,
-        title: "Create Slots"
+        path: PATH_CREATE_SENSORS,
+        title: "Add Sensor"
     }
 
 ];

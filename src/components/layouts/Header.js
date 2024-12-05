@@ -8,7 +8,7 @@ const Header = () => {
       <header className="bg-neutral shadow-md ">
         <div className="container mx-auto flex justify-between items-center">
           {/* Left - Title */}
-          <Typography.Heading className="text-[3rem] text-white"> Easy-Ads</Typography.Heading>
+          <Typography.Heading className="text-[3rem] text-white"> Sensor Data</Typography.Heading>
 
           {/* Right - Profile Icon */}
           <div className="flex items-center space-x-4">

@@ -9,16 +9,16 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-    return config;
-  },
-  images: {
-    domains: ['localhost', 'http://192.168.0.109:8070', '*'],
-  },
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.svg$/,
+            use: ['@svgr/webpack'],
+        });
+        return config;
+    },
+    images: {
+        domains: ['localhost', 'http://192.168.0.109:8070', '*'],
+    },
 };
 
 module.exports = nextConfig;

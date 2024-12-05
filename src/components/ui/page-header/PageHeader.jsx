@@ -1,6 +1,6 @@
 import { Icons } from '@/assets/icons';
 import { Typography } from '@/components/shared/typography';
-import { PATH_CATEGORIES, PATH_DETAILS, PATH_HOME } from '@/helpers/Slugs';
+import { PATH_CREATE_SENSORS, PATH_DETAILS, PATH_HOME } from '@/helpers/Slugs';
 import { Breadcrumb } from 'antd';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
@@ -8,7 +8,7 @@ import React, { Fragment } from 'react';
 const PageHeader = ({breadcrumbItems, heading }) => {
    breadcrumbItems = breadcrumbItems? breadcrumbItems : [
     { title: 'Home', path: PATH_HOME },
-    { title: 'Categories', path: PATH_CATEGORIES },
+    { title: 'Categories', path: PATH_CREATE_SENSORS },
     { title: 'Bundle Details ', path: PATH_DETAILS +'/1' },
   ];
   return (

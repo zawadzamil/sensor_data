@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
-import { ADMIN_PATH, LOGIN_PATH, PATH_MY_TESTS } from '@/helpers/Slugs';
+import {NextResponse} from 'next/server';
+import {ADMIN_PATH, LOGIN_PATH, PATH_MY_TESTS} from '@/helpers/Slugs';
 import {
-  ACCESS_TOKEN,
-  openRoutes,
-  SECURED_SESSION_TOKEN_KEY,
-  SESSION_TOKEN_KEY,
+    ACCESS_TOKEN,
+    openRoutes,
+    SECURED_SESSION_TOKEN_KEY,
+    SESSION_TOKEN_KEY,
 } from './helpers/constant';
 
 // export default function middleware(req) {
@@ -28,24 +28,26 @@ import {
 // You can add any paths that should be accessible without authentication
 
 export async function middleware(request) {
-  const { pathname } = request.nextUrl;
-  // Check if the pathname is in the open routes
-  if (openRoutes.includes(pathname)) {
-    return NextResponse.next();
-  }
-  // For all other routes, check for authentication
-  const token = request.cookies.get(ACCESS_TOKEN);
-  if (token) {
-    // User is authenticated, allow the request to proceed
-    return NextResponse.next();
-  } else {
-    const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
-    return NextResponse.redirect(loginUrl);
-  }
+    const {pathname} = request.nextUrl;
+    // Check if the pathname is in the open routes
+    if (openRoutes.includes(pathname)) {
+        return NextResponse.next();
+    }
+    // For all other routes, check for authentication
+    const token = request.cookies.get(ACCESS_TOKEN);
+    if (token) {
+        // User is authenticated, allow the request to proceed
+        return NextResponse.next();
+    } else {
+        const loginUrl = new URL('/login', request.url);
+        loginUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
+        return NextResponse.redirect(loginUrl);
+    }
 }
+
 // Add any routes that you want the middleware to run on
 // Use '/' to run the middleware on all routes
 export const config = {
-  matcher: ["/my-test"],
+    // matcher: ['/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',],
+matcher: []
 };

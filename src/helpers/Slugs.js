@@ -1,5 +1,6 @@
 export const PATH_HOME = '/';
-export const PATH_CATEGORIES = '/categories';
+export const PATH_DEALER_DASHBOARD = '/';
+export const PATH_CREATE_SENSORS = '/create';
 export const PATH_MY_TESTS = '/my-tests';
 export const PATH_DETAILS = '/details';
 

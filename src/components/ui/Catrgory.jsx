@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { PATH_CATEGORIES } from "@/helpers/Slugs";
+import { PATH_CREATE_SENSORS } from "@/helpers/Slugs";
 import { categoryData } from "@/helpers/StaticData";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -24,7 +24,7 @@ export default function Category() {
                             />
                             <Typography.SubHeading>Top Categories</Typography.SubHeading>
                         </div>
-                        <Link href={PATH_CATEGORIES}>
+                        <Link href={PATH_CREATE_SENSORS}>
                             <Button.Outline>  Explore All</Button.Outline>
                         </Link>
 
