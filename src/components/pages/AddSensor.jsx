@@ -1,6 +1,6 @@
 'use client';
 import React, {Fragment, useState} from 'react';
-import {Input} from "antd";
+import {Input, message} from "antd";
 import {Typography} from "@/components/shared/typography";
 import BaseForm from "@/components/form/BaseForm";
 import {useRouter} from "next/navigation";
@@ -27,7 +27,8 @@ const CreateSensorForm = () => {
                     setLoading: setIsLoading,
                 },
                 (res) => {
-                    console.log(res);
+                    message.success('Sensor created successfully!', 2);
+                    router.push('/');
                 },
             );
         } catch (error) {

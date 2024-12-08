@@ -12,7 +12,12 @@ export const USER_FORGOT_PASSWORD_API_URL = `${API_URL}/users/request/reset-pass
 export const USER_PASSWORD_RESET_API_URL = `${API_URL}/users/password/reset`;
 export const USER_PASSWORD_UPDATE_API_URL = `${API_URL}/users/password/update`;
 export const USER_OTP_VERIFY_API_URL = `${API_URL}/users/verify/email-verification/by-link`;
-export const CREATE_SENSOR = `${ROOT_URL}/sensors/create`;
+
+
+export const CREATE_SENSOR = `${API_URL}/sensors/create`;
+export const GET_ALL_SENSORS = `${API_URL}/sensors`;
+
+export const GET_NUMBERS_BY_ID = `${ROOT_URL}/numbers/by-sensor-id`;
 
 // student
 export const STUDENT_REGISTER_API_URL = `${API_URL}/student/sign-up/by/email`;

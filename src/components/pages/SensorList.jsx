@@ -1,6 +1,9 @@
 import React, {Fragment} from 'react';
+import {timestampToLocalDateTime} from "@/helpers/utils";
+import Link from "next/link";
 
-const SensorList = () => {
+const SensorList = ({data}) => {
+
     return (
         <Fragment>
             <div className="overflow-x-auto mt-4 w-[70%] shadow-lg rounded">
@@ -13,30 +16,16 @@ const SensorList = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr className="bg-white border-b">
-                        <td className="px-4 py-2">daa_aac_123</td>
-                        <td className="px-4 py-2">Nov 12, 2024</td>
+                    {data?.map((sensor) => (
+                        <tr className="bg-white border-b" key={sensor.id}>
+                            <td className="px-4 py-2">{sensor?.sensorId}</td>
+                            <td className="px-4 py-2">{timestampToLocalDateTime(Number(sensor?.createdAt))}</td>
 
-                        <td className="px-4 py-2">
-                            <a href="#" className="text-blue-500 hover:underline">View</a>
-                        </td>
-                    </tr>
-                    <tr className="bg-white border-b">
-                        <td className="px-4 py-2">ass_dsa_432</td>
-                        <td className="px-4 py-2">Nov 13, 2024</td>
-
-                        <td className="px-4 py-2">
-                            <a href="#" className="text-blue-500 hover:underline">View</a>
-                        </td>
-                    </tr>
-                    <tr className="bg-white border-b">
-                        <td className="px-4 py-2">ede_cdd_555</td>
-                        <td className="px-4 py-2">Nov 30, 2024</td>
-
-                        <td className="px-4 py-2">
-                            <a href="#" className="text-blue-500 hover:underline">View</a>
-                        </td>
-                    </tr>
+                            <td className="px-4 py-2">
+                                <Link href={`/${sensor.sensorId}`} className="text-blue-500 hover:underline">View</Link>
+                            </td>
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             </div>
