@@ -12,6 +12,9 @@ const SensorList = ({data}) => {
                     <tr className="bg-primary p-4 rounded-2xl">
                         <th className="px-4 py-2">Sensor ID</th>
                         <th className="px-4 py-2">Created At</th>
+                        <th className="px-4 py-2">MAX</th>
+                        <th className="px-4 py-2">MIN</th>
+                        <th className="px-4 py-2">AVG</th>
                         <th className="px-4 py-2">Camera View</th>
                     </tr>
                     </thead>
@@ -20,6 +23,9 @@ const SensorList = ({data}) => {
                         <tr className="bg-white border-b" key={sensor.id}>
                             <td className="px-4 py-2">{sensor?.sensorId}</td>
                             <td className="px-4 py-2">{timestampToLocalDateTime(Number(sensor?.createdAt))}</td>
+                            <td className="px-4 py-2">{sensor?.max}</td>
+                            <td className="px-4 py-2">{sensor?.min}</td>
+                            <td className="px-4 py-2">{sensor?.avg}</td>
 
                             <td className="px-4 py-2">
                                 <Link href={`/${sensor.sensorId}`} className="text-blue-500 hover:underline">View</Link>

@@ -1,18 +1,18 @@
 "use client";
 import React, {Fragment, useEffect, useRef, useState} from 'react';
 import * as d3 from "d3";
-import {reshapeArray} from "@/helpers/utils";
+import {reshapeArray, timestampToLocalDateTime} from "@/helpers/utils";
 import {GET_NUMBERS_BY_ID} from "@/helpers/apiUrl";
 import {message} from "antd";
+import {Typography} from "@/components/shared/typography";
 
 const CameraView = ({sensorId}) => {
 
-    const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [sensorData, setSensorData] = useState([]);
-
-    console.log(sensorId);
+    const [allData, setAllData] = useState([]);
+    const [average, setAverage] = useState(0);
 
     useEffect(() => {
         if (!sensorId) return;
@@ -28,7 +28,15 @@ const CameraView = ({sensorId}) => {
                 }
 
                 const data = await response.json();
-                setSensorData(data.lists || []); // Ensure 'lists' exists in the response
+                setAllData(data);
+                setSensorData(data[0].lists || []); // Ensure 'lists' exists in the response
+
+                const fetchedSensorData = data[0].lists || [];
+
+                const sum = fetchedSensorData.reduce((acc, num) => acc + num, 0);
+                const avg = fetchedSensorData.length > 0 ? sum / fetchedSensorData.length : 0;
+                setAverage(avg);
+
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -39,7 +47,7 @@ const CameraView = ({sensorId}) => {
         fetchData();
     }, [sensorId]);
 
-    console.log(sensorData);
+
     const thermalMatrix = reshapeArray(sensorData, 24, 32);
     const colorScale = d3.scaleSequential(d3.interpolateTurbo).domain([Math.min(...sensorData), Math.max(...sensorData)]);
 
@@ -62,8 +70,43 @@ const CameraView = ({sensorId}) => {
 
     return (
         <Fragment>
-            <div className="w-[60rem] h-[35rem]  m-4">
+
+            <div className="w-fit h-fit  m-4">
                 <canvas ref={canvasRef} width={500} height={500}></canvas>
+                <div className="mt-10">
+                    <Typography.Text>Max : {Math.max(...sensorData)}</Typography.Text>
+                    <Typography.Text>Min : {Math.min(...sensorData)}</Typography.Text>
+                    <Typography.Text>AVG : {average}</Typography.Text>
+                </div>
+
+                <div className="mt-10">
+                    <Typography.Text>History</Typography.Text>
+                    <table border="1px" style={{width: "100%", borderCollapse: "collapse"}}>
+                        <thead>
+                        <tr>
+                            <th style={{padding: "8px", textAlign: "left"}}>Created At</th>
+                            <th style={{padding: "8px", textAlign: "left"}}>Max</th>
+                            <th style={{padding: "8px", textAlign: "left"}}>Min</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {allData.map((data) => (
+                            <tr key={data.id}>
+                                <td style={{
+                                    padding: "8px",
+                                    border: "1px solid black"
+                                }}>{timestampToLocalDateTime(Number(data?.createdAt))}</td>
+                                <td style={{padding: "8px", border: "1px solid black"}}>
+                                    {Math.max(...data.lists)}
+                                </td>
+                                <td style={{padding: "8px", border: "1px solid black"}}>
+                                    {Math.min(...data.lists)}
+                                </td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </Fragment>
     );
