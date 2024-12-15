@@ -1,10 +1,11 @@
 "use client";
 import React, {Fragment, useEffect, useRef, useState} from 'react';
 import * as d3 from "d3";
-import {reshapeArray, timestampToLocalDateTime} from "@/helpers/utils";
+import {reshapeArray} from "@/helpers/utils";
 import {GET_NUMBERS_BY_ID} from "@/helpers/apiUrl";
-import {message} from "antd";
+import {DatePicker, message} from "antd";
 import {Typography} from "@/components/shared/typography";
+import dayjs from "dayjs";
 
 const CameraView = ({sensorId}) => {
 
@@ -68,6 +69,15 @@ const CameraView = ({sensorId}) => {
         });
     }, [thermalMatrix, colorScale]);
 
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    // Filter data by selected date
+    const filteredData = selectedDate
+        ? allData.filter((data) =>
+            dayjs(Number(data?.createdAt)).isSame(selectedDate, "day")
+        )
+        : allData;
+
     return (
         <Fragment>
 
@@ -80,6 +90,13 @@ const CameraView = ({sensorId}) => {
                 </div>
 
                 <div className="mt-10">
+                    <div style={{marginBottom: "16px"}}>
+                        <DatePicker
+                            onChange={(date) => setSelectedDate(date ? date.startOf("day") : null)}
+                            allowClear
+                            placeholder="Select a date"
+                        />
+                    </div>
                     <Typography.Text>History</Typography.Text>
                     <table border="1px" style={{width: "100%", borderCollapse: "collapse"}}>
                         <thead>
@@ -90,12 +107,11 @@ const CameraView = ({sensorId}) => {
                         </tr>
                         </thead>
                         <tbody>
-                        {allData.map((data) => (
+                        {filteredData.map((data) => (
                             <tr key={data.id}>
-                                <td style={{
-                                    padding: "8px",
-                                    border: "1px solid black"
-                                }}>{timestampToLocalDateTime(Number(data?.createdAt))}</td>
+                                <td style={{padding: "8px", border: "1px solid black"}}>
+                                    {dayjs(Number(data?.createdAt)).format("YYYY-MM-DD HH:mm:ss")}
+                                </td>
                                 <td style={{padding: "8px", border: "1px solid black"}}>
                                     {Math.max(...data.lists)}
                                 </td>
